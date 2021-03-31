@@ -1,6 +1,8 @@
 TREMOR_VSN=main
 
-.PHONY: pages/docs/tremor-script/stdlib
+.PHONY: pages
+
+all: pages/docs/tremor-script/stdlib pages/docs/operations/cli.md
 
 thunk:
 	-git clone https://github.com/tremor-rs/tremor-www-docs pages
