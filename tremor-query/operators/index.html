@@ -1,0 +1,2003 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="The Tremor Team">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Operators - Tremor Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operators" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tremor Documentation" class="md-header__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tremor Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operators
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tremor Documentation" class="md-nav__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Tremor Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        Architecture Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Tremor Query
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Query" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Query
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Operators
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Operators
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouperbucket" class="md-nav__link">
+    grouper::bucket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericbackpressure" class="md-nav__link">
+    generic::backpressure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qosbackpressure" class="md-nav__link">
+    qos::backpressure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qospercentile" class="md-nav__link">
+    qos::percentile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qosroundrobin" class="md-nav__link">
+    qos::roundrobin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qoswal" class="md-nav__link">
+    qos::wal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericbatch" class="md-nav__link">
+    generic::batch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericcounter" class="md-nav__link">
+    generic::counter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debughistory" class="md-nav__link">
+    debug::history
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../walkthrough/" class="md-nav__link">
+        Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Aggregate Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Aggregate Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Aggregate Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/stats/" class="md-nav__link">
+        stats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/win/" class="md-nav__link">
+        win
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Tremor Script
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Script" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Script
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Extractor Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extractor Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extractor Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/base64/" class="md-nav__link">
+        Base64
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/cidr/" class="md-nav__link">
+        CIDR
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/dissect/" class="md-nav__link">
+        Dissect
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/grok/" class="md-nav__link">
+        Grok
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/kv/" class="md-nav__link">
+        KV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/extractors/regex/" class="md-nav__link">
+        Regex
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tremor-script/recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Operations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/monitoring/" class="md-nav__link">
+        Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cli/" class="md-nav__link">
+        Tremor Tool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/configuration-walkthrough/" class="md-nav__link">
+        Configuration Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/gdcb/" class="md-nav__link">
+        Circuit Breakers and Guaranteed Delivery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/linked-transports/" class="md-nav__link">
+        Linked Transports
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Artefacts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Artefacts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Artefacts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../artefacts/preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../artefacts/postprocessors/" class="md-nav__link">
+        Postprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../artefacts/codecs/" class="md-nav__link">
+        Codecs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../artefacts/onramps/" class="md-nav__link">
+        Onramps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../artefacts/offramps/" class="md-nav__link">
+        Offramps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../history/" class="md-nav__link">
+        History
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Workshops
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Workshops" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Workshops
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1" type="checkbox" id="__nav_10_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1">
+        Basic examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Basic examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/00_passthrough/" class="md-nav__link">
+        Passthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/01_filter/" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/02_transform/" class="md-nav__link">
+        Transform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/03_validate/" class="md-nav__link">
+        Validate
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" >
+      
+      <label class="md-nav__link" for="__nav_10_2">
+        Integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integrations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/10_logstash/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/11_influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/12_postgres_timescaledb/" class="md-nav__link">
+        Timescale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/13_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Delivery Guarantees
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Delivery Guarantees" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Delivery Guarantees
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/20_transient_gd/" class="md-nav__link">
+        Transient GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/21_persistent_gd/" class="md-nav__link">
+        Persistent GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/22_roundrobin/" class="md-nav__link">
+        Round Robin
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/23_kafka_gd/" class="md-nav__link">
+        Kafka
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Linked Ramps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linked Ramps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linked Ramps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/30_servers_lt_http/" class="md-nav__link">
+        HTTP Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/31_servers_lt_ws/" class="md-nav__link">
+        Websocket Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/32_proxies_lt_http/" class="md-nav__link">
+        HTTP Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/33_proxies_lt_ws/" class="md-nav__link">
+        Websocket Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/34_bridges_lt_http_ws/" class="md-nav__link">
+        HTTP -> WS Bridge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/35_reverse_proxy_load_balancing/" class="md-nav__link">
+        HTTP Load Balancing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/36_quota_service/" class="md-nav__link">
+        Quota Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/examples/37_configurator/" class="md-nav__link">
+        Configurator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/quick-start/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/profiling/" class="md-nav__link">
+        Profiling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/debugging/" class="md-nav__link">
+        Debugging with LLDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_4" type="checkbox" id="__nav_11_4" >
+      
+      <label class="md-nav__link" for="__nav_11_4">
+        Benchmarking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Benchmarking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_4">
+          <span class="md-nav__icon md-icon"></span>
+          Benchmarking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/benchmarking/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/benchmarks/LogstashBenchmark/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/issue-investigation/" class="md-nav__link">
+        Investigation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Governance
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Governance" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Governance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CodeOfConduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CII/" class="md-nav__link">
+        Core Infrastructure Initiative
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grouperbucket" class="md-nav__link">
+    grouper::bucket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericbackpressure" class="md-nav__link">
+    generic::backpressure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qosbackpressure" class="md-nav__link">
+    qos::backpressure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qospercentile" class="md-nav__link">
+    qos::percentile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qosroundrobin" class="md-nav__link">
+    qos::roundrobin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qoswal" class="md-nav__link">
+    qos::wal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericbatch" class="md-nav__link">
+    generic::batch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericcounter" class="md-nav__link">
+    generic::counter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debughistory" class="md-nav__link">
+    debug::history
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tremor-rs/tremor-www-docs/edit/main/docs/tremor-query/operators.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h1>
+<p>Operators are part of the pipeline configuration.</p>
+<p>Operators process events and signals in the context of a pipeline. An operator, upon receiving an event from an upstream operator or stream, MAY produce one or many events to one or many downstream directly connected operators. An operator MAY drop events which halts any further processing.</p>
+<p>Operators allow the data processing capabilities of tremor to be extended or specialized without changes to runtime behavior, concurrency, event ordering or other aspects of a running tremor system.</p>
+<p>Operators are created in the context of a pipeline and configured as part of <code>tremor-query</code> <a href="../#statements">statements</a>. An operator MUST have an identifier that is unique for its owning pipeline.</p>
+<p>Configuration is of the general form:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">add</span><span class="w"></span>
+<span class="kd">script</span><span class="w"></span>
+<span class="w">  </span><span class="kd">emit</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">create</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">add</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">add</span><span class="err">;</span><span class="w"></span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="script">script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h2>
+<p>The tremor script runtime allows to modify events or their metadata. To learn more about Tremor Script please see the <a href="../../tremor-script/">related section</a>.</p>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code> (default output used with <code>emit</code>)</li>
+<li><code>error</code> - channel for runtime errors</li>
+<li><code>&lt;anything else&gt;</code> used when <code>emit event =&gt; "&lt;anything else&gt;"</code></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">rt</span><span class="w"></span>
+<span class="kd">script</span><span class="w"></span>
+<span class="w">  </span><span class="kd">emit</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="grouperbucket">grouper::bucket<a class="headerlink" href="#grouperbucket" title="Permanent link">&para;</a></h2>
+<p>Bucket will perform a sliding window rate limiting based on event metadata. Limits are applied for every <code>$class</code>. In a <code>$class</code> each <code>$dimensions</code> is allowed to pass <code>$rate</code> messages per second.</p>
+<p>This operator does not support configuration.</p>
+<p><strong>Metadata Variables</strong>:</p>
+<ul>
+<li><code>$class</code> - The class of an event. (String)</li>
+<li><code>$rate</code> - Allowed events per second per class/dimension (Number)</li>
+<li>(Optional) <code>$dimensions</code> - The dimensions of the event. (Any)</li>
+<li>(Optional)<code>$cardinality</code> - the maximum number of dimensions kept track of at the same time (Number, default: <code>1000</code>)</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+<li><code>error</code> - Unprocessable events for example if <code>$class</code> or <code>$rate</code> are not set.</li>
+<li><code>overflow</code> - Events that exceed the rate defined for them</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">grouper</span><span class="err">::</span><span class="nx">bucket</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="kd">group</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p><strong>Metrics</strong>:</p>
+<p>The bucket operator generates additional metrics. For each class the following two statistics are generated (as an example):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;measurement&quot;</span><span class="p">:</span><span class="s2">&quot;bucketing&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;tags&quot;</span><span class="p">:{</span>
+   <span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;bucketing&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;pipeline&quot;</span><span class="p">:</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="s2">&quot;out&quot;</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;fields&quot;</span><span class="p">:{</span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="mi">93</span><span class="p">},</span>
+ <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="mi">1553012903452340000</span>
+<span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;measurement&quot;</span><span class="p">:</span><span class="s2">&quot;bucketing&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;tags&quot;</span><span class="p">:{</span>
+   <span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;overflow&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;bucketing&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;pipeline&quot;</span><span class="p">:</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="s2">&quot;out&quot;</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;fields&quot;</span><span class="p">:{</span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="mi">127</span><span class="p">},</span>
+ <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="mi">1553012903452340000</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This tells us the following, up until this measurement was published in the class <code>test</code>:</p>
+<ul>
+<li>(<code>pass</code>) Passed 93 events</li>
+<li>(<code>overflow</code>) Marked 127 events as overflow due to not fitting in the limit</li>
+</ul>
+<h2 id="genericbackpressure">generic::backpressure<a class="headerlink" href="#genericbackpressure" title="Permanent link">&para;</a></h2>
+<p>This operator is deprecated please use <code>qos::backpressure</code> instead.</p>
+<h2 id="qosbackpressure">qos::backpressure<a class="headerlink" href="#qosbackpressure" title="Permanent link">&para;</a></h2>
+<p>The backpressure operator is used to introduce delays based on downstream systems load. Longer backpressure steps are introduced every time the latency of a downstream system reached <code>timeout</code>, or an error occurs. On a successful transmission within the timeout limit, the delay is reset.</p>
+<p><strong>Configuration options</strong>:</p>
+<ul>
+<li><code>timeout</code> - Maximum allowed 'write' time in milliseconds.</li>
+<li><code>steps</code> - Array of values to delay when a we detect backpressure. (default: <code>[50, 100, 250, 500, 1000, 5000, 10000]</code>)</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+<li><code>overflow</code> - Events that are not let past due to active backpressure</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">qos</span><span class="err">::</span><span class="nx">backpressure</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">bp</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="qospercentile">qos::percentile<a class="headerlink" href="#qospercentile" title="Permanent link">&para;</a></h2>
+<p>An alternative traffic shaping option to backpressure. Instead of all dropping events for a given
+time we drop a statistical subset with an increasing percentage of events dropped the longer we
+see errors / timeouts.</p>
+<p>In general <code>step_up</code> should always be significantly smaller then <code>step_down</code> to ensure we gradually
+reapproach the ideal state.</p>
+<p><strong>Configuration options</strong>:</p>
+<ul>
+<li><code>timeout</code> - Maximum allowed 'write' time in milliseconds.</li>
+<li><code>step_down</code> - What additional percentile should be dropped in the case of a timeout (default 5%: <code>0.05</code>)</li>
+<li><code>step_up</code> - What percentile should be recovered in case of a good event. (default: 0.1%: <code>0.001</code>)</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+<li><code>overflow</code> - Events that are not let past due to active backpressure</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">qos</span><span class="err">::</span><span class="nx">percentile</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="kd">as</span><span class="w"> </span><span class="nx">perc</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">100</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">step_down</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="c1"># 10%</span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="qosroundrobin">qos::roundrobin<a class="headerlink" href="#qosroundrobin" title="Permanent link">&para;</a></h2>
+<p>Evenly distributes events over it's outputs. If a CB trigger event is received from an output this
+output is skipped until the circuit breaker is restored. If all outputs are triggered the operator
+itself triggers a CB event.</p>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>*</code> (any named output is possible)</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">qos</span><span class="err">::</span><span class="nx">roundrobin</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">roundrobin</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">outputs</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">[</span><span class="s">&quot;round&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;robin&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;outputs&quot;</span><span class="err">]</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="qoswal">qos::wal<a class="headerlink" href="#qoswal" title="Permanent link">&para;</a></h2>
+<p>A Write Ahead Log that will persist data to disk and feed the following operators from this disk
+cache. It allows to run onramps that do not provide any support for delivery guarantees with
+offramps that do.</p>
+<p>The wal operator will intercept and generate it's own circuit breaker events. You can think about it
+as a firewall that will protect all operators before itself from issues beyond it. On the other hand
+it will indiscriminately consume data from sources and operators before itself until it's own
+circuit breaking conditions are met.</p>
+<p>At the same time will it interact with tremors guaranteed delivery system, events are only removed
+from disk once they're acknowledged. In case of delivery failure the WAL operator will replay the
+failed events. On the same way the WAL operator will acknowledge events that it persists to disk.</p>
+<p>The WAL operator should be used with caution, since every event that passes through it will be
+written to the hard drive it has a significant performance impact.</p>
+<p><strong>Configuration options</strong>:</p>
+<ul>
+<li><code>read_count</code> - Maximum number of events that are read form the WAL at one time.</li>
+<li><code>dir</code> - Directory to store the WAL-file in (optional, if omitted the WAL will remain in memory and not be
+  persisted to disk)</li>
+<li><code>max_elements</code> - Maximum number of elements the WAL will cache before triggering a CB event</li>
+<li><code>max_bytes</code> - Maximum space on disk the WAL should take (this is a soft limit!)</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">qos</span><span class="err">::</span><span class="nx">wal</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">wal</span><span class="w"> </span><span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">dir</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;./wal&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">read_count</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">20</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">max_elements</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1000</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">max_bytes</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10485760</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="genericbatch">generic::batch<a class="headerlink" href="#genericbatch" title="Permanent link">&para;</a></h2>
+<p>The batch operator is used to batch multiple events and send them in a bulk fashion. It also allows to set a timeout of how long the operator should wait for a batch to be filled.</p>
+<p>Supported configuration options are:</p>
+<ul>
+<li><code>count</code> - Elements per batch</li>
+<li><code>timeout</code> - Maximum delay between the first element of a batch and the last element of a batch.</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">generic</span><span class="err">::</span><span class="nx">batch</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">batch</span><span class="w"> </span><span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">count</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">300</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="genericcounter">generic::counter<a class="headerlink" href="#genericcounter" title="Permanent link">&para;</a></h2>
+<p>Keeps track of the number of events as they come and emits the current count out alongside the event. The output is a record of the form <code>{"count": n, "event": event}</code>, where <code>n</code> is the current count and <code>event</code> is the original event.</p>
+<p>The counter starts when the first event comes through and begins from 1.</p>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">generic</span><span class="err">::</span><span class="nx">counter</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">counter</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="debughistory">debug::history<a class="headerlink" href="#debughistory" title="Permanent link">&para;</a></h2>
+<p>Generates a history entry in the event. Data is written to an array with the key provided in <code>name</code>, tagged with <code>"event: &lt;op&gt;(&lt;event_id&gt;)"</code>.</p>
+<p><strong>Configuration options</strong>:</p>
+<ul>
+<li><code>op</code> - The operation name of this operator</li>
+<li><code>name</code> - The field to store the history on</li>
+</ul>
+<p><strong>Outputs</strong>:</p>
+<ul>
+<li><code>out</code></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">debug</span><span class="err">::</span><span class="nx">history</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">history</span><span class="w"> </span><span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">op</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;my-checkpoint&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;event_history&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../modules/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Modules
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

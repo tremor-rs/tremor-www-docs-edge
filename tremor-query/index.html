@@ -1,0 +1,2235 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="The Tremor Team">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Overview - Tremor Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tremor-query" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tremor Documentation" class="md-header__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tremor Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tremor Documentation" class="md-nav__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Tremor Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Architecture Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Tremor Query
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Query" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Query
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-friendly" class="md-nav__link">
+    Developer friendly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-oriented-event-based" class="md-nav__link">
+    Stream-oriented / event-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-documenting" class="md-nav__link">
+    Self-documenting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    Extensibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performant" class="md-nav__link">
+    Performant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
+  </a>
+  
+    <nav class="md-nav" aria-label="Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tremor-script" class="md-nav__link">
+    Tremor-Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    Queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stream-definitions" class="md-nav__link">
+    Stream definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-definitions" class="md-nav__link">
+    Window definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tumbling-windows" class="md-nav__link">
+    Tumbling Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Tumbling Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-based-on-number-of-events" class="md-nav__link">
+    Windows based on number of events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-based-on-time" class="md-nav__link">
+    Windows based on time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-operator-definitions" class="md-nav__link">
+    Custom Operator definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-script-definitions" class="md-nav__link">
+    Embedded script definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-queries" class="md-nav__link">
+    Select queries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operators/" class="md-nav__link">
+        Operators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="walkthrough/" class="md-nav__link">
+        Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Aggregate Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Aggregate Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Aggregate Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions/stats/" class="md-nav__link">
+        stats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions/win/" class="md-nav__link">
+        win
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Tremor Script
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Script" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Script
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Extractor Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extractor Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extractor Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/base64/" class="md-nav__link">
+        Base64
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/cidr/" class="md-nav__link">
+        CIDR
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/dissect/" class="md-nav__link">
+        Dissect
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/grok/" class="md-nav__link">
+        Grok
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/kv/" class="md-nav__link">
+        KV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/extractors/regex/" class="md-nav__link">
+        Regex
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-script/recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Operations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/monitoring/" class="md-nav__link">
+        Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/cli/" class="md-nav__link">
+        Tremor Tool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/configuration-walkthrough/" class="md-nav__link">
+        Configuration Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/gdcb/" class="md-nav__link">
+        Circuit Breakers and Guaranteed Delivery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/linked-transports/" class="md-nav__link">
+        Linked Transports
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Artefacts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Artefacts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Artefacts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/postprocessors/" class="md-nav__link">
+        Postprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/codecs/" class="md-nav__link">
+        Codecs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/onramps/" class="md-nav__link">
+        Onramps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/offramps/" class="md-nav__link">
+        Offramps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        History
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Workshops
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Workshops" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Workshops
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1" type="checkbox" id="__nav_10_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1">
+        Basic examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Basic examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/00_passthrough/" class="md-nav__link">
+        Passthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/01_filter/" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/02_transform/" class="md-nav__link">
+        Transform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/03_validate/" class="md-nav__link">
+        Validate
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" >
+      
+      <label class="md-nav__link" for="__nav_10_2">
+        Integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integrations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/10_logstash/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/11_influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/12_postgres_timescaledb/" class="md-nav__link">
+        Timescale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/13_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Delivery Guarantees
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Delivery Guarantees" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Delivery Guarantees
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/20_transient_gd/" class="md-nav__link">
+        Transient GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/21_persistent_gd/" class="md-nav__link">
+        Persistent GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/22_roundrobin/" class="md-nav__link">
+        Round Robin
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/23_kafka_gd/" class="md-nav__link">
+        Kafka
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Linked Ramps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linked Ramps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linked Ramps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/30_servers_lt_http/" class="md-nav__link">
+        HTTP Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/31_servers_lt_ws/" class="md-nav__link">
+        Websocket Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/32_proxies_lt_http/" class="md-nav__link">
+        HTTP Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/33_proxies_lt_ws/" class="md-nav__link">
+        Websocket Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/34_bridges_lt_http_ws/" class="md-nav__link">
+        HTTP -> WS Bridge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/35_reverse_proxy_load_balancing/" class="md-nav__link">
+        HTTP Load Balancing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/36_quota_service/" class="md-nav__link">
+        Quota Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/37_configurator/" class="md-nav__link">
+        Configurator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/quick-start/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/profiling/" class="md-nav__link">
+        Profiling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/debugging/" class="md-nav__link">
+        Debugging with LLDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_4" type="checkbox" id="__nav_11_4" >
+      
+      <label class="md-nav__link" for="__nav_11_4">
+        Benchmarking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Benchmarking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_4">
+          <span class="md-nav__icon md-icon"></span>
+          Benchmarking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/benchmarking/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/benchmarks/LogstashBenchmark/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/issue-investigation/" class="md-nav__link">
+        Investigation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Governance
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Governance" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Governance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CodeOfConduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CII/" class="md-nav__link">
+        Core Infrastructure Initiative
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-friendly" class="md-nav__link">
+    Developer friendly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-oriented-event-based" class="md-nav__link">
+    Stream-oriented / event-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-documenting" class="md-nav__link">
+    Self-documenting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    Extensibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performant" class="md-nav__link">
+    Performant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
+  </a>
+  
+    <nav class="md-nav" aria-label="Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tremor-script" class="md-nav__link">
+    Tremor-Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    Queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    Statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stream-definitions" class="md-nav__link">
+    Stream definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-definitions" class="md-nav__link">
+    Window definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tumbling-windows" class="md-nav__link">
+    Tumbling Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Tumbling Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-based-on-number-of-events" class="md-nav__link">
+    Windows based on number of events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-based-on-time" class="md-nav__link">
+    Windows based on time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-operator-definitions" class="md-nav__link">
+    Custom Operator definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-script-definitions" class="md-nav__link">
+    Embedded script definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-queries" class="md-nav__link">
+    Select queries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tremor-rs/tremor-www-docs/edit/main/docs/tremor-query/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="tremor-query">Tremor-Query<a class="headerlink" href="#tremor-query" title="Permanent link">&para;</a></h1>
+<p>The tremor query language, <code>tremor-query</code> or <strong>trickle</strong> is an interpreted statement-oriented language designed for continuous online structured queries with support for filtering, extraction, transformation and streaming of structured data in a stream or event-based processing system.</p>
+<p>At its core, <code>tremor-query</code> supports the definition of windows operators, stream definitions and operations on those streams such as <strong>select</strong>, <strong>operator</strong> and <strong>script</strong>.</p>
+<p>Structured queries in <strong>trickle</strong> consume unstructured data that are in and of themselves at least well-formed ( eg: such as JSON ) and produce synthetic events that are also well-formed and in and of themselves unstructured.</p>
+<p>The language does not impose schema based constraints on data flowing through the system, although this may produce runtime errors for badly written queries.</p>
+<p>The query language interpreter constructs a directed-acyclic-graph or <strong>DAG</strong> by analysing the dependencies of operators in a user defined query. The input and output streams are then calculated. The DAG model is the same as the pipeline model in previous versions of tremor, but with a rich query language replacing the deprecated tremor yaml format for pipelines.</p>
+<h2 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link">&para;</a></h2>
+<h3 id="safety">Safety<a class="headerlink" href="#safety" title="Permanent link">&para;</a></h3>
+<p>The language is explicitly not Turing-complete:</p>
+<ul>
+<li>there are no unstructured <code>goto</code> grammar forms</li>
+<li>there are no unbounded <code>for</code>, <code>while</code> or <code>do..while</code> looping constructs</li>
+<li>the language is built on top of <a href="https://www.rust-lang.org/">Rust</a>, inheriting its robustness and safety features, without the development overheads</li>
+</ul>
+<h3 id="developer-friendly">Developer friendly<a class="headerlink" href="#developer-friendly" title="Permanent link">&para;</a></h3>
+<p>The language adopts a SQL-like syntax for key statement forms and has a path-like syntax for indexing into records and arrays. The statement-oriented query language prefers nested data-structures to tables and columns from traditional ANSI-ISO SQL as most of the data processed through tremor is structured and JSON-like.</p>
+<p>The expression language in <strong>trickle</strong> is based on <code>tremor-script</code>.</p>
+<h3 id="stream-oriented-event-based">Stream-oriented / event-based<a class="headerlink" href="#stream-oriented-event-based" title="Permanent link">&para;</a></h3>
+<p>Tremor-query is designed to process unstructured ( but well-formed ) data events. Event data can be JSON, MsgPack or any other form supported by the tremor event processing system.</p>
+<h3 id="self-documenting">Self-documenting<a class="headerlink" href="#self-documenting" title="Permanent link">&para;</a></h3>
+<p>The SQL-like syntax enables a natural and familiar style whilst allowing the resulting statements to be compiled into a formal DAG for compile-time checks and to ensure correctness.</p>
+<p>Leveraging the tremor-query expression syntax allows rich filtering, transformation, patching, merging and object/array comprehensions to be programmed.</p>
+<p>The addition of aggregate functions, and windowing allows batches or a slice in time of events to be summarised or processed together to derive useful synthetic events.</p>
+<p>Like its sibling language <code>tremor-script</code>, <code>tremor-query</code> supports the same data-types and is entirely event-driven. It has many parallels for existing tremor users to leverage while learning, yet it is powerful and flexible in its own right.</p>
+<h3 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h3>
+<p>The SQL-based nature of <code>tremor-query</code> means that complex branching, combining or powerful constructs such as in-memory tables can be added following a familiar SQL-like syntax.</p>
+<p>The expression-based expression language derived from <code>tremor-script</code> allows computational forms to be extended.</p>
+<p>The language core is designed for reuse - currently the expression language is reused in the query language, as are the library of functions available to both. The addition of aggregate functions is currently exclusive to tremor-query as these are only relevant when processing multiple in-flight ( or cached ) events at the same time.</p>
+<p>In the future, <code>tremor-query</code> may be retargeted as a JIT-compiled language and other domain specific languages may be integrated as the tremor runtime evolves to meet new uses, demands, and stake-holders.</p>
+<h3 id="performant">Performant<a class="headerlink" href="#performant" title="Permanent link">&para;</a></h3>
+<p>Data ingested into tremor-query is vectorized via SIMD-parallel instructions on x86-64 or other Intel processor architectures supporting ssev3/avx extensions. Processing streams of such event-data incurs some allocation overhead at this time, but these event-bound allocations are being written out of the interpreter.</p>
+<p>The current meaning of <code>performant</code> as documented here means that <code>tremor-query</code> is more efficient at processing metrics-like data than the system it replaces ( telegraf / kapacitor / influx ) which do not support rich proactive and reactive back-pressure mechanisms or efficient asynchronous event-based data distribution between system components.</p>
+<h3 id="productive">Productive<a class="headerlink" href="#productive" title="Permanent link">&para;</a></h3>
+<p>The <code>tremor-query</code> parsing tool-chain has been designed with ease-of-debugging and ease-of-development in mind. It has builtin support for syntax-highlighting on the console with errors annotating highlighted sections of badly written scripts to simplify fixing such scripts.</p>
+<p>The tool-chain inherits most of its core capabilities from the <code>tremor-script</code> and pipeline components of the tremor runtime. These components are already in large-scale production use and battle-hardened; this, in turn, minimises any associated risks with introducing a query language, whilst offering a migration path away from the far less expressive and far less easy-to-use yaml-based pipeline configuration which is more error-prone and verbose.</p>
+<h2 id="language">Language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h2>
+<p>This section details the major components of the <code>tremor-query</code> language.</p>
+<h3 id="tremor-script">Tremor-Script<a class="headerlink" href="#tremor-script" title="Permanent link">&para;</a></h3>
+<p>Comments, Literals, Paths and Expression forms supported in <strong>trickle</strong> are the
+same as in <code>tremor-script</code>.</p>
+<h3 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h3>
+<p>Queries are one or many statements separated by <code>;</code>.</p>
+<p>Queries are compiled into a DAG of operator nodes and validated at compile time. At runtime, the resulting executable tremor pipeline is evaluated/interpreted.</p>
+<p>Query grammar:</p>
+<blockquote>
+<p><img alt="query grammar" src="grammar/diagram/Query.png" /></p>
+</blockquote>
+<h3 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">&para;</a></h3>
+<p>Statements can be one of:</p>
+<ul>
+<li>Stream definitions</li>
+<li>Window definitions</li>
+<li>Custom Operator definitions</li>
+<li>Embedded <code>tremor-script</code> definitions</li>
+<li>Or builtin operations, like the <code>select</code> statement</li>
+</ul>
+<h4 id="stream-definitions">Stream definitions<a class="headerlink" href="#stream-definitions" title="Permanent link">&para;</a></h4>
+<p>Stream definitions in <code>tremor-query</code> allow private intermediate streams to be named so that they can be used as the source or sinks in other continuous queries.</p>
+<p>Stream definition grammar:</p>
+<blockquote>
+<p><img alt="create stream grammar" src="grammar/diagram/CreateStreamDefn.png" /></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kd">create</span><span class="w"> </span><span class="kd">stream</span><span class="w"> </span><span class="nx">passthrough</span><span class="err">;</span><span class="w"></span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">passthrough</span><span class="err">;</span><span class="w"> </span><span class="c1"># select default public &#39;in&#39; stream into passthrough</span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">passthrough</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"> </span><span class="c1"># select passthrough into default public &#39;out&#39; stream</span>
+</code></pre></div>
+<h4 id="window-definitions">Window definitions<a class="headerlink" href="#window-definitions" title="Permanent link">&para;</a></h4>
+<p>Window definitions in <code>tremor-query</code> can be either tumbling or sliding.</p>
+<p>A tumbling window is a window configured with a fixed non-overlapping interval of time. The window aggregates events once opened, and continues aggregating until it closes. The window can emit synthetic events upon closing. The window reopens for its next cycle when it closes.</p>
+<p>Support for sliding windows has not been implemented yet (it has an <a href="https://rfcs.tremor.rs/0004-sliding-window-mechanism/">open RFC</a> and it will be picked up for a future release).</p>
+<h4 id="tumbling-windows">Tumbling Windows<a class="headerlink" href="#tumbling-windows" title="Permanent link">&para;</a></h4>
+<p>Tremor supports tumbling windows by number of events or by time.</p>
+<p>General configuration Parameters:</p>
+<ul>
+<li><code>eviction_period</code>: duration in nanoseconds without events arriving, after which to evict / remove the current window data for a single group.</li>
+<li><code>max_groups</code>: maximum number of groups to maintain simultaneously in memory. Groups added beyond that number will be ignored. Per default, tremor does not impose any limit on the number of groups kept simultaneously.</li>
+</ul>
+<p>Each select statement maintains the groups for the current windows in an in memory data-structure. This contains the group values as well as the aggregate states.
+If your grouping values possibly have a very high cardinality it is possible to end up with runaway memory growth, as per default the group data structures won't be evicted,
+unless <code>eviction_period</code> is set. Old groups will be discarded after <code>2 x eviction_period</code> if no event for those groups arrived.
+To configure an upper bound on the number of groups that should be maintained simultaneously for a window, set <code>max_groups</code>.
+This will help avoid unbounded memory growth, especially when using <code>emit_empty_windows</code> on time based windows.</p>
+<h5 id="windows-based-on-number-of-events">Windows based on number of events<a class="headerlink" href="#windows-based-on-number-of-events" title="Permanent link">&para;</a></h5>
+<p>Size based tumbling windows close when a certain number of aggregated events has been reached.</p>
+<p>Configuration Parameters:</p>
+<ul>
+<li><code>size</code>: Number of events until this window closes and emits a downstream event.</li>
+</ul>
+<p>The size increment for each event defaults to <code>1</code> but can be customized by the embedded script in the window definition.
+This script needs to return an unsigned integer denoting the number of events to use for this event.
+It is possible to ignore the current event by emitting <code>0</code>.</p>
+<h5 id="windows-based-on-time">Windows based on time<a class="headerlink" href="#windows-based-on-time" title="Permanent link">&para;</a></h5>
+<p>Time based tumbling windows close when a certain duration has elapsed. The source for measuring the duration
+is the <code>ingest</code> timestamp of the events flowing through by default. The provided embedded script can be used to customize the
+source of time measurement. The embedded script must return a number representing a timestamp in nanoseconds.
+This way windows using timestamps other than the event ingest time can be built.</p>
+<p>Only windows using the event ingest timestamp can be closed when the time in <code>interval</code> is elapsed measured by wall-clock time
+independent from event flow with a granularity of <code>100ms</code>. It is thus possible that empty windows are emitted. Windows using scripts to determine the window elapsed time are considered to deviate from wall clock time and will only close and emit when events flow through them.</p>
+<p>Configuration Parameters:</p>
+<ul>
+<li><code>interval</code>: Time interval in nanoseconds after which the window closes.</li>
+<li><code>emit_empty_windows</code> - By default, time based windows will only emit, if events arrived. By configuring <code>emit_empty_windows</code> as <code>true</code> this window will emit every <code>interval</code>, regardless if events arrived or not.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use a window with <code>emit_empty_windows</code> in a <code>group by</code> query and the cardinality is likely huge, consider using <code>max_groups</code> and <code>eviction_period</code> to avoid runaway memory growth such a window will one event per interval and group for which we've seen events before.</p>
+</div>
+<p>Window definition grammar:</p>
+<blockquote>
+<p><img alt="window definition grammar" src="grammar/diagram/DefineWindowDefn.png" />
+<img alt="with params grammar" src="grammar/diagram/WithParams.png" />
+<img alt="with partial params grammar" src="grammar/diagram/WithPartialParams.png" />
+<img alt="embedded script grammar" src="grammar/diagram/EmbeddedScript.png" /></p>
+</blockquote>
+<p>For example a 15 second tumbling window based on the event ingest timestamp can be defined as follows</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">fifteen_secs</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">core</span><span class="err">::</span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_seconds</span><span class="err">(</span><span class="mi">15</span><span class="err">),</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>The same window can be defined using a timestamp that is extracted from the message instead of the ingest time:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">fifteen_secs</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">core</span><span class="err">::</span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_seconds</span><span class="err">(</span><span class="mi">15</span><span class="err">),</span><span class="w"></span>
+<span class="kd">script</span><span class="w"></span>
+<span class="w">    </span><span class="kc">event</span><span class="err">.</span><span class="nx">timestamp</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>A tumbling window based on number of events that will discard windows when 2 hours have been passed:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">with_size</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1000</span><span class="err">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">eviction_period</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">core</span><span class="err">::</span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_hours</span><span class="err">(</span><span class="mi">2</span><span class="err">)</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="custom-operator-definitions">Custom Operator definitions<a class="headerlink" href="#custom-operator-definitions" title="Permanent link">&para;</a></h4>
+<p>Custom operators allow definition, configuration and usage of legacy operators, that have been around before tremor supported the query language. As the query language and deprecated yaml format share the same DAG model and pipeline formats, they are interoperable at runtime and are backwards compatible:</p>
+<p>Operator definition grammar:</p>
+<blockquote>
+<p><img alt="operator definition grammar" src="grammar/diagram/DefineOperatorDefn.png" />
+<img alt="with params grammar" src="grammar/diagram/WithParams.png" /></p>
+</blockquote>
+<p>Creating an operator:</p>
+<blockquote>
+<p><img alt="create operator grammar" src="grammar/diagram/CreateOperatorDefn.png" />
+<img alt="with params grammar" src="grammar/diagram/WithParams.png" /></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># create a bucketing operator</span>
+<span class="kd">define</span><span class="w"> </span><span class="nx">grouper</span><span class="err">::</span><span class="nx">bucket</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">create</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+
+<span class="c1"># ...</span>
+
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">categorize</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">kfc</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="embedded-script-definitions">Embedded script definitions<a class="headerlink" href="#embedded-script-definitions" title="Permanent link">&para;</a></h4>
+<p>The tremor-script language can be embedded in the query language natively and this mirrors legacy usage (before v0.9) where it was embedded within yaml-based pipeline configuration. However, the tooling that ships with <code>tremor-query</code> understands both the query language and scripting language dialects with better syntax highlighting and error checking built in, for ease of operator productivity over the deprecated yaml syntax.</p>
+<p>Script definition grammar:</p>
+<blockquote>
+<p><img alt="script definition grammar" src="grammar/diagram/DefineScriptDefn.png" />
+<img alt="with partial params grammar" src="grammar/diagram/WithPartialParams.png" />
+<img alt="embedded script grammar" src="grammar/diagram/EmbeddedScript.png" /></p>
+</blockquote>
+<p>Script an operator:</p>
+<blockquote>
+<p><img alt="create script grammar" src="grammar/diagram/CreateScriptDefn.png" />
+<img alt="with params grammar" src="grammar/diagram/WithParams.png" /></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">grouper</span><span class="err">::</span><span class="nx">bucket</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">define</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">categorize</span><span class="w"></span>
+<span class="kd">script</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="err">$</span><span class="nx">rate</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="err">;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="err">$</span><span class="nx">class</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.`</span><span class="kd">group</span><span class="err">`;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;event&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;rate&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">$</span><span class="nx">rate</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;class&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">$</span><span class="nx">class</span><span class="w"> </span><span class="nx">}</span><span class="err">;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+
+<span class="kd">create</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">categorize</span><span class="err">;</span><span class="w"></span>
+<span class="c1"># Stream ingested data into categorize script</span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">categorize</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">create</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+<span class="c1"># Stream scripted events into kfc bucket operator</span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">categorize</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">kfc</span><span class="err">;</span><span class="w"></span>
+
+<span class="c1"># Stream bucketed events into out stream</span>
+<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">kfc</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="select-queries">Select queries<a class="headerlink" href="#select-queries" title="Permanent link">&para;</a></h4>
+<p>The select query is a builtin operation that is the workhorse of the <code>tremor-query</code> language.</p>
+<p>The select operation is of the general form:</p>
+<blockquote>
+<p><img alt="select grammar" src="grammar/diagram/SelectStmt.png" />
+<img alt="from grammar" src="grammar/diagram/FromClause.png" />
+<img alt="where grammar" src="grammar/diagram/WhereClause.png" />
+<img alt="group by grammar" src="grammar/diagram/GroupByClause.png" />
+<img alt="group by dimensions grammar" src="grammar/diagram/GroupByDimension.png" />
+<img alt="set group grammar" src="grammar/diagram/SetBasedGroup.png" />
+<img alt="each group grammar" src="grammar/diagram/EachBasedGroup.png" />
+<img alt="into grammar" src="grammar/diagram/IntoClause.png" />
+<img alt="having grammar" src="grammar/diagram/HavingClause.png" /></p>
+</blockquote>
+<p>An example select operation configured to pass through data from a pipeline's default <code>in</code> stream to a pipeline's default <code>out</code> stream:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Select operations can filter ingested data with the specification of a <code>where</code> clause. The clause forms a predicate check on the inbound events before any further processing takes place.
+That means the <code>event</code> available to the <code>where</code> clause is the unprocessed inbound event from the input stream (<code>in</code> in this case):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">where</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">is_interesting</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Select operations can filter data being forwarded to other operators with the specification of a <code>having</code> clause. The clause forms a predicate check on outbound synthetic events after any other processing has taken place.
+That means the <code>event</code> available to the <code>having</code> clause is the result of evaluating the <code>select</code> target clause (the expression between <code>select</code> and <code>from</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">having</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">is_interesting</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Select operations can be windowed by <strong>applying</strong> a window to the inbound data stream.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">fifteen_secs</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_seconds</span><span class="err">(</span><span class="mi">15</span><span class="err">),</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">select</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;count&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">stats</span><span class="err">::</span><span class="nx">count</span><span class="err">()</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="err">[</span><span class="nx">fifteen_secs</span><span class="err">]</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">having</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">count</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>In the above operation, we emit a synthetic count every fifteen seconds if at least one event has been witnessed during a 15 second window of time.</p>
+<p>Select operations can be grouped through defining a <code>group by</code> clause.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">fifteen_secs</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_seconds</span><span class="err">(</span><span class="mi">15</span><span class="err">),</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">select</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;count&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">stats</span><span class="err">::</span><span class="nx">count</span><span class="err">()</span><span class="w"> </span><span class="nx">}</span><span class="w"></span>
+<span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="err">[</span><span class="nx">fifteen_secs</span><span class="err">]</span><span class="w"></span>
+<span class="kd">group</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="kd">set</span><span class="err">(</span><span class="kc">event</span><span class="err">.</span><span class="nx">partition</span><span class="err">)</span><span class="w"></span>
+<span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="w"></span>
+<span class="kd">having</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">count</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>In the above operation, we partition the ingested events into groups defined by a required <code>event.partition</code> data field on the inbound event. Each of these groups maintains an independent fifteen second tumbling window, and each window upon closing gates outbound synthetic events by a count for that group.</p>
+<p>The current implementation of <code>select</code> allows set-based and each-based grouping. These can be composed concatenatively. However <code>cube</code> and <code>rollup</code> based grouping dimensions are not currently supported.</p>
+<p>In windowed queries any event related data can only be referenced in those two cases:</p>
+<ul>
+<li>it is used as an argument to an aggregate function</li>
+<li>it is used as expression in the <code>group by</code> clause</li>
+</ul>
+<p>Here is an example of valid and invalid references:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">my_window</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">  </span><span class="nx">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">12</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">select</span><span class="w"> </span><span class="nx">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;last&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">win</span><span class="err">::</span><span class="nx">last</span><span class="err">(</span><span class="kc">event</span><span class="err">.</span><span class="nx">other</span><span class="err">),</span><span class="w"> </span><span class="c1"># ok, inside aggregate function</span>
+<span class="w">    </span><span class="s">&quot;foo&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">foo</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="c1"># ok, used inside aggregate function</span>
+<span class="w">    </span><span class="s">&quot;bad&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">other</span><span class="err">,</span><span class="w">   </span><span class="c1"># NOT OK</span>
+<span class="w">    </span><span class="s">&quot;bad_meta&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">$</span><span class="nx">my_meta</span><span class="err">,</span><span class="w"> </span><span class="c1"># NOT OK, same rules apply to event metadata</span>
+<span class="nx">}</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="err">[</span><span class="nx">my_window</span><span class="err">]</span><span class="w"></span>
+<span class="kd">group</span><span class="w"> </span><span class="kd">by</span><span class="w"> </span><span class="kd">set</span><span class="err">(</span><span class="kc">event</span><span class="err">.</span><span class="nx">foo</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">bar</span><span class="err">)</span><span class="w"></span>
+<span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../overview/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Architecture Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="operators/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Operators
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

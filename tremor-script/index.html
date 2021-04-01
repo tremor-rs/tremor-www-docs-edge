@@ -1,0 +1,3061 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="The Tremor Team">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Overview - Tremor Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tremor-script" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tremor Documentation" class="md-header__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tremor Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tremor Documentation" class="md-nav__button md-logo" aria-label="Tremor Documentation" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Tremor Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/tremor-rs/tremor-www-docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tremor-rs/tremor-www-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Architecture Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Tremor Query
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Query" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Query
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/operators/" class="md-nav__link">
+        Operators
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/walkthrough/" class="md-nav__link">
+        Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Aggregate Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Aggregate Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Aggregate Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/functions/stats/" class="md-nav__link">
+        stats
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/functions/win/" class="md-nav__link">
+        win
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tremor-query/recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Tremor Script
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tremor Script" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tremor Script
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-friendly" class="md-nav__link">
+    Developer friendly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-oriented-event-based" class="md-nav__link">
+    Stream-oriented / event-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-documenting" class="md-nav__link">
+    Self-documenting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    Extensibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performant" class="md-nav__link">
+    Performant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
+  </a>
+  
+    <nav class="md-nav" aria-label="Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    Null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-numerics" class="md-nav__link">
+    Integer Numerics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-numerics" class="md-nav__link">
+    Floating-Point Numerics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-and-unicode-code-points" class="md-nav__link">
+    Character and Unicode Code-points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf-8-encoded-strings" class="md-nav__link">
+    UTF-8 encoded Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="UTF-8 encoded Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-interpolation" class="md-nav__link">
+    String Interpolation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heredocs" class="md-nav__link">
+    HereDocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#records" class="md-nav__link">
+    Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary" class="md-nav__link">
+    Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths" class="md-nav__link">
+    Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    Const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let" class="md-nav__link">
+    Let
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop" class="md-nav__link">
+    Drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emit" class="md-nav__link">
+    Emit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+    <nav class="md-nav" aria-label="Match">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matching-literal-expressions" class="md-nav__link">
+    Matching literal expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-on-test-predicate-expressions" class="md-nav__link">
+    Matching on test predicate expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-and-extract-expressions" class="md-nav__link">
+    Match and extract expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-tuple-patterns" class="md-nav__link">
+    Matching tuple patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-array-patterns" class="md-nav__link">
+    Matching array patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-record-patterns" class="md-nav__link">
+    Matching record patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-clauses" class="md-nav__link">
+    Guard clauses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    Merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    Patch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-comprehensions" class="md-nav__link">
+    For comprehensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractors" class="md-nav__link">
+    Extractors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pp/" class="md-nav__link">
+        Lexical Preprocessor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      <label class="md-nav__link" for="__nav_4_4">
+        Function Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Function Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Function Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        Extractor Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extractor Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extractor Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/base64/" class="md-nav__link">
+        Base64
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/cidr/" class="md-nav__link">
+        CIDR
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/datetime/" class="md-nav__link">
+        Datetime
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/dissect/" class="md-nav__link">
+        Dissect
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/glob/" class="md-nav__link">
+        Glob
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/grok/" class="md-nav__link">
+        Grok
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/kv/" class="md-nav__link">
+        KV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extractors/regex/" class="md-nav__link">
+        Regex
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes/" class="md-nav__link">
+        Recipes
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Operations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Operations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/monitoring/" class="md-nav__link">
+        Monitoring
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/cli/" class="md-nav__link">
+        Tremor Tool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/configuration-walkthrough/" class="md-nav__link">
+        Configuration Walkthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/gdcb/" class="md-nav__link">
+        Circuit Breakers and Guaranteed Delivery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/linked-transports/" class="md-nav__link">
+        Linked Transports
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Artefacts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Artefacts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Artefacts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/preprocessors/" class="md-nav__link">
+        Preprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/postprocessors/" class="md-nav__link">
+        Postprocessors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/codecs/" class="md-nav__link">
+        Codecs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/onramps/" class="md-nav__link">
+        Onramps
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artefacts/offramps/" class="md-nav__link">
+        Offramps
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        History
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Workshops
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Workshops" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Workshops
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_1" type="checkbox" id="__nav_10_1" >
+      
+      <label class="md-nav__link" for="__nav_10_1">
+        Basic examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Basic examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/00_passthrough/" class="md-nav__link">
+        Passthrough
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/01_filter/" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/02_transform/" class="md-nav__link">
+        Transform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/03_validate/" class="md-nav__link">
+        Validate
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" type="checkbox" id="__nav_10_2" >
+      
+      <label class="md-nav__link" for="__nav_10_2">
+        Integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integrations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/10_logstash/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/11_influx/" class="md-nav__link">
+        Influx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/12_postgres_timescaledb/" class="md-nav__link">
+        Timescale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/13_grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" type="checkbox" id="__nav_10_3" >
+      
+      <label class="md-nav__link" for="__nav_10_3">
+        Delivery Guarantees
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Delivery Guarantees" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Delivery Guarantees
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/20_transient_gd/" class="md-nav__link">
+        Transient GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/21_persistent_gd/" class="md-nav__link">
+        Persistent GD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/22_roundrobin/" class="md-nav__link">
+        Round Robin
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/23_kafka_gd/" class="md-nav__link">
+        Kafka
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
+      
+      <label class="md-nav__link" for="__nav_10_4">
+        Linked Ramps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linked Ramps" data-md-level="2">
+        <label class="md-nav__title" for="__nav_10_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linked Ramps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/30_servers_lt_http/" class="md-nav__link">
+        HTTP Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/31_servers_lt_ws/" class="md-nav__link">
+        Websocket Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/32_proxies_lt_http/" class="md-nav__link">
+        HTTP Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/33_proxies_lt_ws/" class="md-nav__link">
+        Websocket Proxy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/34_bridges_lt_http_ws/" class="md-nav__link">
+        HTTP -> WS Bridge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/35_reverse_proxy_load_balancing/" class="md-nav__link">
+        HTTP Load Balancing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/36_quota_service/" class="md-nav__link">
+        Quota Service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/examples/37_configurator/" class="md-nav__link">
+        Configurator
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/quick-start/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/profiling/" class="md-nav__link">
+        Profiling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/debugging/" class="md-nav__link">
+        Debugging with LLDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_4" type="checkbox" id="__nav_11_4" >
+      
+      <label class="md-nav__link" for="__nav_11_4">
+        Benchmarking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Benchmarking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_11_4">
+          <span class="md-nav__icon md-icon"></span>
+          Benchmarking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/benchmarking/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/benchmarks/LogstashBenchmark/" class="md-nav__link">
+        Logstash
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/testing/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/issue-investigation/" class="md-nav__link">
+        Investigation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Governance
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Governance" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Governance
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CodeOfConduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CII/" class="md-nav__link">
+        Core Infrastructure Initiative
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety" class="md-nav__link">
+    Safety
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-friendly" class="md-nav__link">
+    Developer friendly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-oriented-event-based" class="md-nav__link">
+    Stream-oriented / event-based
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-documenting" class="md-nav__link">
+    Self-documenting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensibility" class="md-nav__link">
+    Extensibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performant" class="md-nav__link">
+    Performant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#productive" class="md-nav__link">
+    Productive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
+  </a>
+  
+    <nav class="md-nav" aria-label="Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    Comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    Null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-numerics" class="md-nav__link">
+    Integer Numerics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-point-numerics" class="md-nav__link">
+    Floating-Point Numerics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-and-unicode-code-points" class="md-nav__link">
+    Character and Unicode Code-points
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf-8-encoded-strings" class="md-nav__link">
+    UTF-8 encoded Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="UTF-8 encoded Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-interpolation" class="md-nav__link">
+    String Interpolation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heredocs" class="md-nav__link">
+    HereDocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#records" class="md-nav__link">
+    Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary" class="md-nav__link">
+    Binary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths" class="md-nav__link">
+    Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    Const
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let" class="md-nav__link">
+    Let
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop" class="md-nav__link">
+    Drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emit" class="md-nav__link">
+    Emit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    Match
+  </a>
+  
+    <nav class="md-nav" aria-label="Match">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matching-literal-expressions" class="md-nav__link">
+    Matching literal expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-on-test-predicate-expressions" class="md-nav__link">
+    Matching on test predicate expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-and-extract-expressions" class="md-nav__link">
+    Match and extract expressions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-tuple-patterns" class="md-nav__link">
+    Matching tuple patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-array-patterns" class="md-nav__link">
+    Matching array patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-record-patterns" class="md-nav__link">
+    Matching record patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-clauses" class="md-nav__link">
+    Guard clauses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    Merge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    Patch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-comprehensions" class="md-nav__link">
+    For comprehensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractors" class="md-nav__link">
+    Extractors
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/tremor-rs/tremor-www-docs/edit/main/docs/tremor-script/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="tremor-script">Tremor-Script<a class="headerlink" href="#tremor-script" title="Permanent link">&para;</a></h1>
+<p>The <code>tremor-script</code> scripting language is an interpreted expression-oriented language designed for the filtering, extraction, transformation and streaming of structured data in a stream or event-based processing system.</p>
+<p>At its core, <code>tremor-script</code> supports a structured type system equivalent to JSON. It supports integer, floating point, boolean and UTF-8 encoded string literals, literal arrays and associative dictionaries or record types in addition to a <code>null</code> marker.</p>
+<p>A well-formed JSON document is a legal tremor-script expression.</p>
+<h2 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link">&para;</a></h2>
+<h3 id="safety">Safety<a class="headerlink" href="#safety" title="Permanent link">&para;</a></h3>
+<p>The language is explicitly not Turing-complete:</p>
+<ul>
+<li>there are no unstructured <code>goto</code> grammar forms</li>
+<li>there are no unbounded <code>for</code>, <code>while</code> or <code>do..while</code> looping constructs</li>
+<li>the language is built on top of rust, inheriting its robustness and safety features, without the development overheads</li>
+</ul>
+<h3 id="developer-friendly">Developer friendly<a class="headerlink" href="#developer-friendly" title="Permanent link">&para;</a></h3>
+<p>The language adopts a Fortran-like syntax for key expression forms and has a path-like syntax for indexing into records and arrays</p>
+<h3 id="stream-oriented-event-based">Stream-oriented / event-based<a class="headerlink" href="#stream-oriented-event-based" title="Permanent link">&para;</a></h3>
+<p>Tremor-script is designed to process unstructured ( but well-formed ) data events. Event data can be JSON, MsgPack or any other form supported by the tremor event processing system.</p>
+<h3 id="self-documenting">Self-documenting<a class="headerlink" href="#self-documenting" title="Permanent link">&para;</a></h3>
+<p>The fortran-like syntax allows rich operations to be computed against arbitrary JSON-like data. For example JSON documents can be <code>patch</code>ed and <code>merge</code>ed with operation and document based templates. Records and Arrays can be iterated over to transform them, merge them with other documents or to extract subsets for further processing</p>
+<h3 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h3>
+<p>The expression-based nature of <code>tremor-script</code> means that computational forms and any processing is transient. The language describes a set of rules ( expressions ) that process an inbound event document into an outbound documented emitted after evaluation of the script.</p>
+<p>The core expression language is designed for reuse in other script-based DSLs and can currently be extended through its modular function subsystem.</p>
+<p>The language also supports a pluggable data extraction model allowing base64 encoded, regular expressions and other micro-formats encoded within record fields to be referenced based on their internal structure and for subsets to be mapped accordingly.</p>
+<p>In the future, <code>tremor-script</code> may be retargeted as a JIT-compiled language.</p>
+<h3 id="performant">Performant<a class="headerlink" href="#performant" title="Permanent link">&para;</a></h3>
+<p>Data ingested into tremor-script is vectorized via SIMD-parallel instructions on x86-64 or other Intel processor architectures supporting ssev3/avx extensions. Processing streams of such event-data incurs some allocation overhead at this time, but these event-bound allocations are being written out of the interpreter.</p>
+<p>The current meaning of <code>performant</code> as documented here means that <code>tremor-script</code> is more efficient at processing log-like data than the system it replaces ( logstash - which mixes extraction plugins such as <code>grok</code> and <code>dissect</code> with JRuby scripts and a terse configuration format )</p>
+<h3 id="productive">Productive<a class="headerlink" href="#productive" title="Permanent link">&para;</a></h3>
+<p>The <code>tremor-script</code> parsing tool-chain has been designed with ease-of-debugging and ease-of-development in mind. It has buitin support for syntax-highlighting on the console with errors annotating highlighted sections of badly written
+scripts to simplify fixing such scripts.</p>
+<h2 id="language">Language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h2>
+<p>This section details the major components of the <code>tremor-script</code> language</p>
+<h3 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h3>
+<p>Comments in <code>tremor-script</code> are single-line comments that begin with a '#' symbol and continue until end of line.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># I am a comment</span>
+</code></pre></div>
+<h3 id="literals">Literals<a class="headerlink" href="#literals" title="Permanent link">&para;</a></h3>
+<p>Literal in <code>tremor-script</code> are equivalent to their sibling types supported by the JSON format.</p>
+<h4 id="null">Null<a class="headerlink" href="#null" title="Permanent link">&para;</a></h4>
+<p>The null literal which represents the absence of a defined value</p>
+<div class="highlight"><pre><span></span><code><span class="kc">null</span><span class="w"></span>
+</code></pre></div>
+<h4 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h4>
+<p>Boolean literal.</p>
+<div class="highlight"><pre><span></span><code><span class="kc">true</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kc">false</span><span class="w"></span>
+</code></pre></div>
+<h4 id="integer-numerics">Integer Numerics<a class="headerlink" href="#integer-numerics" title="Permanent link">&para;</a></h4>
+<p>Integers in <code>tremor-script</code> are signed and are limited to 64-bit internal representation</p>
+<div class="highlight"><pre><span></span><code><span class="mi">404</span><span class="w"></span>
+</code></pre></div>
+<h4 id="floating-point-numerics">Floating-Point Numerics<a class="headerlink" href="#floating-point-numerics" title="Permanent link">&para;</a></h4>
+<p>Floating point numerics in <code>tremor-script</code> are signed and are limited to 64-bit IEEE representation</p>
+<div class="highlight"><pre><span></span><code><span class="mf">1.67</span><span class="err">-</span><span class="nx">e10</span><span class="w"></span>
+</code></pre></div>
+<h4 id="character-and-unicode-code-points">Character and Unicode Code-points<a class="headerlink" href="#character-and-unicode-code-points" title="Permanent link">&para;</a></h4>
+<p>The language does not support literal character or Unicode code-points at this time.</p>
+<h4 id="utf-8-encoded-strings">UTF-8 encoded Strings<a class="headerlink" href="#utf-8-encoded-strings" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;I am a string&quot;</span><span class="w"></span>
+</code></pre></div>
+<h5 id="string-interpolation">String Interpolation<a class="headerlink" href="#string-interpolation" title="Permanent link">&para;</a></h5>
+<p>For strings tremor allows string interpolation, this means embedding code directly into strings to create strings out of them.</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;I am a </span><span class="nx">#{</span><span class="w"> </span><span class="s">&quot;string with </span><span class="nx">#{</span><span class="mi">1</span><span class="nx">}</span><span class="s"> interpolation.&quot;</span><span class="w"> </span><span class="nx">}</span><span class="s">&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>A hash sign followed by a curly bracket needs to be escaped <code>\#{</code> hash signs themselves do not need to be escaped.</p>
+<h5 id="heredocs">HereDocs<a class="headerlink" href="#heredocs" title="Permanent link">&para;</a></h5>
+<p>To deal with pre formatted strings in tremor script we allow for <strong>heredocs</strong> they are started by using triple quotes <code>"""</code> that terminate the line (aka <code>"""bla</code> isn't legal). Heredocs do not truncate leading indentation, only the first leading linebreak after the leading triple-quote <code>"""</code> stripped.</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;&quot;&quot;</span>
+<span class="s">    I am</span>
+<span class="s">   a</span>
+<span class="s">    long</span>
+<span class="s">    multi-line</span>
+<span class="s">    string with </span><span class="nx">#{</span><span class="w"> </span><span class="s">&quot;</span><span class="nx">#{</span><span class="mi">1</span><span class="nx">}</span><span class="s"> interpolation&quot;</span><span class="w"> </span><span class="nx">}</span><span class="s"></span>
+<span class="s">&quot;&quot;&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>Since Tremor 0.9 Heredocs also support <a href="#string-interpolation">String Interpolation</a>. A hash sign followed by a curly bracket needs to be escaped <code>\#{</code> hash signs themselves do not need to be escaped.</p>
+<h4 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h4>
+<p>Array grammar:</p>
+<blockquote>
+<p><img alt="array grammar" src="grammar/diagram/Array.png" /></p>
+</blockquote>
+<p>Array literals in <code>tremor-script</code> are a comma-delimited set of expressions bracketed by the square brakcets '[' and ']'.</p>
+<div class="highlight"><pre><span></span><code><span class="err">[</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;foobar&quot;</span><span class="err">,</span><span class="w"> </span><span class="mf">3.456e10</span><span class="err">,</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;some&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;json-like-document&quot;</span><span class="w"> </span><span class="nx">}</span><span class="err">,</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="err">]</span><span class="w"></span>
+</code></pre></div>
+<h4 id="records">Records<a class="headerlink" href="#records" title="Permanent link">&para;</a></h4>
+<p>Record grammar:</p>
+<blockquote>
+<p><img alt="record grammar" src="grammar/diagram/Record.png" /></p>
+</blockquote>
+<p>Field grammar:</p>
+<blockquote>
+<p><img alt="field grammar" src="grammar/diagram/Field.png" /></p>
+</blockquote>
+<p>Record literals in <code>tremor-script</code> are syntactically equivalent to JSON document objects</p>
+<div class="highlight"><pre><span></span><code><span class="nx">{</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;field1&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;value1&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;field2&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="err">],</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;field3&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;field4&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;field5&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"></span>
+<span class="nx">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="binary">Binary<a class="headerlink" href="#binary" title="Permanent link">&para;</a></h4>
+<p>Binaries are based on the <a href="https://erlang.org/doc/programming_examples/bit_syntax.html">Erlang bit syntax</a>.</p>
+<p>Binary grammar:</p>
+<blockquote>
+<p><img alt="record grammar" src="grammar/diagram/Binary.png" /></p>
+</blockquote>
+<p>Binaryfields grammar:</p>
+<blockquote>
+<p><img alt="fields grammar" src="grammar/diagram/BinaryFields.png" /></p>
+</blockquote>
+<p>Binaryfield grammar:</p>
+<blockquote>
+<p><img alt="field grammar" src="grammar/diagram/BinaryField.png" /></p>
+</blockquote>
+<p>Parts of each field are: <code>&lt;value&gt;:&lt;size&gt;/&lt;type&gt;</code> where both <code>size</code> and <code>type</code> are optional.</p>
+<p>The types currently supported are:</p>
+<ul>
+<li><code>binary</code> - this can handle both binaries and strings, <code>size</code> here refers to the number of bytes</li>
+<li><code>integer</code> - this can represent integers, <code>size</code> here means size in bits. In addition the type can be prefixed with <code>big</code> and <code>little</code> for indianness and <code>signed</code> and <code>unsigned</code> for signedness.</li>
+</ul>
+<p>Some examples would be:</p>
+<ul>
+<li><code>&lt;&lt;1:1, 42:7&gt;&gt;</code></li>
+<li><code>&lt;&lt;(1 + 1)/unsigned-big-integer&gt;&gt;</code></li>
+<li><code>&lt;&lt;1:4, "badger"/binary, -2:4/signed-little-integer&gt;&gt;</code></li>
+</ul>
+<p>We could construct a TCP package this way:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># constructing a TCP package</span>
+<span class="c1"># using made up, non-correct values</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">{</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;src&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">{</span><span class="s">&quot;port&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">1234</span><span class="nx">}</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;dst&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">{</span><span class="s">&quot;port&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">2345</span><span class="nx">}</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;seq&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;ack&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">4567</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;offset&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;res&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;flags&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">3</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;win&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">4</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;checksum&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">5</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;urgent&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">6</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;data&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;snot badger!&quot;</span><span class="w"></span>
+<span class="nx">}</span><span class="err">;</span><span class="w"></span>
+
+<span class="err">&lt;&lt;</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">src</span><span class="err">.</span><span class="nx">port</span><span class="err">:</span><span class="mi">16</span><span class="err">,</span><span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">dst</span><span class="err">.</span><span class="nx">port</span><span class="err">:</span><span class="mi">16</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">seq</span><span class="err">:</span><span class="mi">32</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">ack</span><span class="err">:</span><span class="mi">32</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">offset</span><span class="err">:</span><span class="mi">4</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">res</span><span class="err">:</span><span class="mi">4</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">flags</span><span class="err">:</span><span class="mi">8</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">win</span><span class="err">:</span><span class="mi">16</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">checksum</span><span class="err">:</span><span class="mi">16</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">urgent</span><span class="err">:</span><span class="mi">16</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="kc">event</span><span class="err">.</span><span class="nx">data</span><span class="err">/</span><span class="nx">binary</span><span class="w"></span>
+<span class="err">&gt;&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h4>
+<p>List of binary and unary operators in <code>tremor-script</code>, ordered by precedence (from low to high):</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Example</th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>or</td>
+<td>Logical OR</td>
+<td><code>true or false</code></td>
+<td>bool</td>
+</tr>
+<tr>
+<td>and</td>
+<td>Logical AND</td>
+<td><code>true and false</code></td>
+<td>bool</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Bitwise OR</td>
+<td><em>Bitwise OR has not been implemented yet</em></td>
+<td>-</td>
+</tr>
+<tr>
+<td>^</td>
+<td>Bitwise XOR</td>
+<td><code>42 ^ 42, true ^ true</code></td>
+<td>integer, bool</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+<td><code>42 &amp; 0, true &amp; false</code></td>
+<td>integer, bool</td>
+</tr>
+<tr>
+<td>==, !=</td>
+<td>Equality, Inequality</td>
+<td><code>"snot" != "badger"</code></td>
+<td>all</td>
+</tr>
+<tr>
+<td>&lt;, &lt;=, &gt;, &gt;=</td>
+<td>Comparison Operators</td>
+<td><code>42 &gt; 0</code></td>
+<td>integer, float, string, binary</td>
+</tr>
+<tr>
+<td>&lt;&lt;, &gt;&gt;, &gt;&gt;&gt;</td>
+<td>Bitwise shift -- Left, Right(signed), Right(unsigned)</td>
+<td><code>42 &gt;&gt; 2</code></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>+, -</td>
+<td>Addition, Subtraction</td>
+<td><code>42 + 0</code></td>
+<td>integer, float, string</td>
+</tr>
+<tr>
+<td>*, /, %</td>
+<td>Multiplication, Division, Modulus</td>
+<td><code>42 * 1</code></td>
+<td>integer, float (no modulo)</td>
+</tr>
+<tr>
+<td>+, -</td>
+<td>Unary Plus, Unary Minus</td>
+<td><code>+42</code></td>
+<td>integer, float, string</td>
+</tr>
+<tr>
+<td>not , !</td>
+<td>Unary Logical NOT, Unary Bitwise NOT</td>
+<td><code>not false</code>, <em>Bitwise NOT has not been implemented yet</em></td>
+<td>bool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paths">Paths<a class="headerlink" href="#paths" title="Permanent link">&para;</a></h3>
+<p>Path grammar:</p>
+<blockquote>
+<p><img alt="path grammar" src="grammar/diagram/Path.png" /></p>
+</blockquote>
+<p>Qualified Segments grammar:</p>
+<blockquote>
+<p><img alt="qualified segment grammar" src="grammar/diagram/QualifiedSegments.png" /></p>
+</blockquote>
+<p>PathSegment grammar:</p>
+<blockquote>
+<p><img alt="segment grammar" src="grammar/diagram/PathSegment.png" /></p>
+</blockquote>
+<p>ArraySegment grammar:</p>
+<blockquote>
+<p><img alt="array grammar" src="grammar/diagram/ArraySegment.png" /></p>
+</blockquote>
+<p>Path-like structures in <code>tremor-script</code> allow a subset of an ingested event, meta-data passed to the tremor-script function and script-local data to be indexed.</p>
+<p>Example event for illustration purposes:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;store&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;book&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;reference&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Nigel Rees&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sayings of the Century&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">8.95</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;fiction&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Herman Melville&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Moby Dick&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isbn&quot;</span><span class="p">:</span> <span class="s2">&quot;0-553-21311-3&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">8.99</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;fiction&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Lord of the Rings&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isbn&quot;</span><span class="p">:</span> <span class="s2">&quot;0-395-19395-8&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">22.99</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;bicycle&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">19.95</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;expensive&quot;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Grab the entire event document:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Grab the books from the store (the same using key, index and escaped key notation for field lookup):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="err">;</span><span class="w"></span>
+<span class="c1"># index and escaped notation can acomodate keys that include &#39;odd&#39; characters such as whitespaces or dots.</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">[</span><span class="s">&quot;book&quot;</span><span class="err">];</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">.`</span><span class="nx">book</span><span class="err">`;</span><span class="w"></span>
+</code></pre></div>
+<p>Grab the first book:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="err">[</span><span class="mi">0</span><span class="err">];</span><span class="w"></span>
+</code></pre></div>
+<p>Grab the title of the 3rd book:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="err">[</span><span class="mi">2</span><span class="err">].</span><span class="nx">title</span><span class="w"></span>
+</code></pre></div>
+<p>Grab the range of books from 0 ( the first ) to 2 ( the last ), exclusive of the last book:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">capture</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="err">[</span><span class="mi">0</span><span class="err">:</span><span class="mi">2</span><span class="err">];</span><span class="w"></span>
+</code></pre></div>
+<p>The type of a path is equivalent to the type of the data returned by a path expression. So in the above examples, a reference to a book title would return the value at that path, which in the reference event document is a <code>string</code>.</p>
+<p>Path's in <code>tremor-script</code> are themselves expressions in their own right.</p>
+<h3 id="const">Const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h3>
+<p>Const grammer:</p>
+<p><img alt="const grammar" src="grammar/diagram/Const.png" /></p>
+<p>Const can be used to define immutable, constant values that get evaluated at compile time. This is more performant then <code>let</code> as all logic can happen at compile time and is helpful for setting up lookup tables or other never changing data structures.</p>
+<h3 id="let">Let<a class="headerlink" href="#let" title="Permanent link">&para;</a></h3>
+<p>Let grammar:</p>
+<blockquote>
+<p><img alt="let grammar" src="grammar/diagram/Let.png" /></p>
+</blockquote>
+<p>The let expression allows data pointed to by a path to be destructively mutated, and the pointed-to value reassigned. If the path does not yet exist, it will be created in-situ:</p>
+<p>Set a local variable <code>a</code> to the literal integer value 10:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Set a local variable <code>a</code> to be the ingested event record</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">event</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Set the global variable <code>a</code> to be the value of the local variable <code>a</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="err">$</span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">a</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="drop">Drop<a class="headerlink" href="#drop" title="Permanent link">&para;</a></h3>
+<p>Drop expressions enable short-circuiting the evaluation of a <code>tremor-script</code> when badly formed data is discovered. If no argument is supplied, <code>drop</code> will return the event record. If an argument is supplied, the result of evaluating the expression will be returned. Tremor or other processing tools can process dropped events or data using purpose-built error-handling.</p>
+<p>As the content of the dropped event is user-defined, operators can standardise the format of the error emitted on drop from <code>tremor-script</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">drop</span><span class="err">;</span><span class="w"></span>
+<span class="kd">drop</span><span class="err">;</span><span class="w"> </span><span class="c1"># As the first emit always wins, this expression never runs</span>
+</code></pre></div>
+<h3 id="emit">Emit<a class="headerlink" href="#emit" title="Permanent link">&para;</a></h3>
+<p>Emit grammar:</p>
+<blockquote>
+<p><img alt="emit grammar" src="grammar/diagram/Emit.png" /></p>
+</blockquote>
+<p>Emit expressions enable short-circuiting the evaluation of a <code>tremor-script</code> when processing is known to be complete and further processing can be avoided. If no argument is supplied, emit` will return the event record. If an argument is supplied, the result of evaluating the expression will be returned. Tremor or other processing tools can process emitted events or data using their default flow-based or stream-based data processing pipelines.</p>
+<p>As the content of the emitted event is user-defined, oeprators can standardise the format of the event emitted on emit from <code>tremor-script</code></p>
+<p><em>NOTE</em> By default, if no <code>emit</code> or <code>drop</code> expressions are defined, all expressions in a correctly written tremor-script will be evaluated until completion and the value of the last expression evaluated will be returned as an <code>emit</code> message.</p>
+<p>Implicit emission:</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;badgers&quot;</span><span class="w"> </span><span class="c1"># implicit emit</span>
+</code></pre></div>
+<p>Explicit emission of <code>"snot"</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;badgers&quot;</span><span class="w"> </span><span class="c1"># literals do not short-circuit processing, so we continue to the next expression in this case</span>
+<span class="kd">emit</span><span class="w"> </span><span class="s">&quot;snot&quot;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">emit</span><span class="w"> </span><span class="s">&quot;oh noes!&quot;</span><span class="w"></span>
+<span class="kd">emit</span><span class="w"> </span><span class="s">&quot;never happens&quot;</span><span class="err">;</span><span class="w"> </span><span class="c1"># As the first emit always wins, this expression never runs</span>
+</code></pre></div>
+<p>There are times when it is necessary to emit synthetic events from <code>tremor-script</code> within a tremor <code>pipeline</code> to an alternate <code>operator</code> port than the default success route. For example, when data is well-formed but not valid and the data needs to be <strong>diverted</strong> into an alternate flow. The emit clause can be deployed for this purpose by specifying an optional named port.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">emit</span><span class="w"> </span><span class="nx">{</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;event&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;status&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;malformed&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;description&quot;</span><span class="err">:</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;required field `loglevel` is absent&quot;</span><span class="w"></span>
+<span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;invalid&quot;</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">&para;</a></h3>
+<p>Match grammar:</p>
+<blockquote>
+<p><img alt="match grammar" src="grammar/diagram/Match.png" /></p>
+</blockquote>
+<p>Match case grammar:</p>
+<blockquote>
+<p><img alt="case grammar" src="grammar/diagram/MatchCaseClause.png" /></p>
+</blockquote>
+<p>Match expressions enable data to be filtered or queried using case-based reasoning. Match expressions take the form:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">target</span><span class="err">&gt;</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="kd">case</span><span class="w"> </span><span class="err">&lt;</span><span class="kd">case</span><span class="err">-</span><span class="nx">expr</span><span class="err">&gt;</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">guard</span><span class="err">&gt;</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">block</span><span class="err">&gt;</span><span class="w"></span>
+<span class="err">...</span><span class="w"></span>
+<span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">block</span><span class="err">&gt;</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li>target: An expression that is the target of case-based queries</li>
+<li>case-expr: A predicate test, literal value or pattern to match against</li>
+<li>guard: An optional predicate expression to gate whether or not an otherwise matching case-clause will in fact match</li>
+<li>block: The expression to be evaluated if the case matches, and any supplied guard evaluates to true</li>
+</ul>
+<p>Examples:</p>
+<p>Discover if the <code>store.book</code> path is an array, record or scalar structure:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%[]</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;store.book is an array-like data-structure&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;store.book is a record-like data-structure&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;store.book is a scalar data-type&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<p>Find all fiction books in the store:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">found</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">match</span><span class="w"> </span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">fiction</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%[</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">category</span><span class="w"> </span><span class="err">~=</span><span class="w"> </span><span class="s">&quot;fiction&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">fiction</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+<span class="kd">emit</span><span class="w"> </span><span class="nx">found</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matching-literal-expressions">Matching literal expressions<a class="headerlink" href="#matching-literal-expressions" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><img alt="expression grammar" src="grammar/diagram/ExprCase.png" /></p>
+</blockquote>
+<p>The simplest form of case expression in match expressions is matching a literal value. Values can be any legal tremor-script type and they can be provided as literals, computed values or path references to local variables, metadata or values arriving via events.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">match</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;matched&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="kd">drop</span><span class="w"> </span><span class="s">&quot;not possible&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;this is a&quot;</span><span class="err">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot; string&quot;</span><span class="err">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">example</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">match</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="s">&quot;this is a string&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;matched&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="kd">drop</span><span class="w"> </span><span class="s">&quot;not possible&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;this is a string&quot;</span><span class="err">,</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;record-field&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;field-value&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">];</span><span class="w"></span>
+<span class="kd">match</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="kd">drop</span><span class="w"> </span><span class="s">&quot;not possible&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matching-on-test-predicate-expressions">Matching on test predicate expressions<a class="headerlink" href="#matching-on-test-predicate-expressions" title="Permanent link">&para;</a></h4>
+<p>It is also possible to perform predicate based matching</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="s">&quot;this is not base64 encoded&quot;</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">~</span><span class="w"> </span><span class="nx">base64</span><span class="err">||</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;surprisingly, this is legal base64 data&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="kd">drop</span><span class="w"> </span><span class="s">&quot;as suspected, this is not base64 encoded&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>These are often referred to informally as <code>tilde expressions</code> and tremor supports a variety of micro-formats that can be used for predicate or test-based matching such as logstash dissect, json, influx, perl-compatible regular expressions.</p>
+<p>Tilde expressions can under certain conditions elementize ( extract ) micro-format data. The elementization or extraction is covered in the <a href="#extractors">Extractors</a> section of this document and in the Extractor reference.</p>
+<h4 id="match-and-extract-expressions">Match and extract expressions<a class="headerlink" href="#match-and-extract-expressions" title="Permanent link">&para;</a></h4>
+<p>It is also possible to elementize or ingest supported micro-formats into tremor-script for further processing. For example, we can use the <code>~=</code> and <code>~</code> operator to perform a predicate test, such as the base64 test in the previous example, which upon success, extracts ( in the base64 case, decoding ) a value for further processing.</p>
+<p>For example if we had an embedded JSON document in a string, we could test for the value being well-formed json, and extract the contents to a local variable as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">sneaky_json</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">{ </span><span class="se">\&quot;</span><span class="s">snot</span><span class="se">\&quot;</span><span class="s">: </span><span class="se">\&quot;</span><span class="s">badger</span><span class="se">\&quot;</span><span class="s"> }</span>
+<span class="s">&quot;</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">match</span><span class="w"> </span><span class="nx">sneaky_json</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">json</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">~</span><span class="w"> </span><span class="nx">json</span><span class="err">||</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">json</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="kd">drop</span><span class="w"> </span><span class="s">&quot;this is not the json we were looking for&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matching-tuple-patterns">Matching tuple patterns<a class="headerlink" href="#matching-tuple-patterns" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A <em>tuple pattern</em> matches a <em>target</em> value if the <em>target</em> is an array and <strong>each</strong> test matches the positionally correspondent value in the <em>target</em>. The <em>target</em> needs to be <strong>at least as long</strong> as the <em>pattern</em> but <strong>can be longer</strong> if the <em>pattern</em> ends with <code>...</code>.</p>
+<p>If you are looking for a more set like operation look at the <a href="#matching-array-patterns">array pattern</a>.</p>
+</div>
+<blockquote>
+<p><img alt="tuple case grammar" src="grammar/diagram/TupleCase.png" /></p>
+</blockquote>
+<p>Tuple Pattern grammar:</p>
+<blockquote>
+<p><img alt="tuple pattern grammar" src="grammar/diagram/TuplePattern.png" /></p>
+</blockquote>
+<p>Tuple Pattern filter grammar:</p>
+<blockquote>
+<p><img alt="tuple filter grammar" src="grammar/diagram/TuplePatternFilter.png" /></p>
+</blockquote>
+<p>In addition to literal array matching, where the case expression tuple literal must exactly match the target of the match expression one for one, tuple patterns enable testing for matching elements within an array and filtering on the basis of matched elements.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">[</span><span class="mi">0</span><span class="err">,</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"> </span><span class="mi">3</span><span class="err">,</span><span class="w"> </span><span class="mi">4</span><span class="err">,</span><span class="w"> </span><span class="mi">5</span><span class="err">,</span><span class="w"> </span><span class="mi">6</span><span class="err">,</span><span class="w"> </span><span class="mi">7</span><span class="err">,</span><span class="w"> </span><span class="mi">8</span><span class="err">,</span><span class="w"> </span><span class="mi">9</span><span class="err">,</span><span class="w"> </span><span class="mi">0</span><span class="err">];</span><span class="w"></span>
+<span class="kd">match</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;is a zero&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%(</span><span class="w"> </span><span class="mi">0</span><span class="err">,</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="err">)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;starts with a zero&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%(</span><span class="w"> </span><span class="kc">_</span><span class="err">,</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="err">)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;has 1 one at index 1&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;does not contain zero&#39;s&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matching-array-patterns">Matching array patterns<a class="headerlink" href="#matching-array-patterns" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>An <em>array pattern</em> matches a target value if the <em>target</em> is an array and <strong>each</strong> test in the pattern matches <strong>at least for one</strong> element in the <em>target</em> indiscriminate of their positions.</p>
+<p>If you are looking for a more array like / positional operation look at the <a href="#matching-tuple-patterns">tuple pattern</a>.</p>
+</div>
+<blockquote>
+<p><img alt="array case grammar" src="grammar/diagram/ArrayCase.png" /></p>
+</blockquote>
+<p>Array Pattern grammar:</p>
+<blockquote>
+<p><img alt="array pattern grammar" src="grammar/diagram/ArrayPattern.png" /></p>
+</blockquote>
+<p>Array Pattern filter grammar:</p>
+<blockquote>
+<p><img alt="array filter grammar" src="grammar/diagram/ArrayPatternFilter.png" /></p>
+</blockquote>
+<p>In addition to a subset match, where the elements of the pattern must be included in the target of the match expression, array patterns enable testing for matching elements within an array and filtering on the basis of matched elements.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">[</span><span class="mi">0</span><span class="err">,</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"> </span><span class="mi">3</span><span class="err">,</span><span class="w"> </span><span class="mi">4</span><span class="err">,</span><span class="w"> </span><span class="mi">5</span><span class="err">,</span><span class="w"> </span><span class="mi">6</span><span class="err">,</span><span class="w"> </span><span class="mi">7</span><span class="err">,</span><span class="w"> </span><span class="mi">8</span><span class="err">,</span><span class="w"> </span><span class="mi">9</span><span class="err">,</span><span class="w"> </span><span class="mi">0</span><span class="err">];</span><span class="w"></span>
+<span class="kd">match</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%[</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;contains zero&#39;s&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;does not contain zero&#39;s&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Predicate matching against supported micro-formats is also supported in array pattern matching.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="s">&quot;snot&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;snot badger&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;snot snot&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;badger badger&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;badger&quot;</span><span class="w"> </span><span class="err">];</span><span class="w"></span>
+<span class="kd">match</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%[</span><span class="w"> </span><span class="err">~</span><span class="nx">re</span><span class="err">|^(</span><span class="nx">P</span><span class="err">&lt;</span><span class="nx">hit</span><span class="err">&gt;</span><span class="nx">snot</span><span class="err">.*)$|</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">got</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;not snotty at all&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="matching-record-patterns">Matching record patterns<a class="headerlink" href="#matching-record-patterns" title="Permanent link">&para;</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A record pattern matches a target if the target is a record that contains <strong>at least all declared keys</strong> and the tests for <strong>each of the declared key</strong> match.</p>
+</div>
+<blockquote>
+<p><img alt="record case grammar" src="grammar/diagram/RecordCase.png" /></p>
+</blockquote>
+<p>Record Pattern grammar</p>
+<blockquote>
+<p><img alt="record pattern grammar" src="grammar/diagram/RecordPattern.png" /></p>
+</blockquote>
+<p>Record Pattern Fields grammar</p>
+<blockquote>
+<p><img alt="record pattern field grammar" src="grammar/diagram/RecordPatternFields.png" /></p>
+</blockquote>
+<p>Similarly to record literal matching where the case expression record must exactly match the target of the match expression, record patterns enable testing for matching fields or sub-structures within a record and extracting and elementizing data on the basis of matched predicate tests ( via <code>~=</code> ).</p>
+<p>We can check for the presence of fields:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;superhero&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;human&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;clark kent&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="kd">present</span><span class="w"> </span><span class="nx">superhero</span><span class="err">,</span><span class="w"> </span><span class="kd">present</span><span class="w"> </span><span class="nx">human</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;not possible&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<p>We can check for the absence of fields:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;superhero&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;human&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;clark kent&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="kd">absent</span><span class="w"> </span><span class="nx">superhero</span><span class="err">,</span><span class="w"> </span><span class="kd">absent</span><span class="w"> </span><span class="nx">human</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;not possible&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<p>We can test the values of fields that are present:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;superhero&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;human&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;clark kent&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">superhero</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;we are saved! \o/&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">superhero</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;we may be saved! \o/&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;call 911&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>We can test for records within records:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;superhero&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;superman&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">superhero</span><span class="w"> </span><span class="err">~=</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="kd">present</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;superman is super&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">superhero</span><span class="w"> </span><span class="err">~=</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="kd">absent</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;anonymous superhero is anonymous&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;something bad happened&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>We can also test for records within arrays within records tersely through nested pattern matching:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;superhero&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;batman&quot;</span><span class="w"> </span><span class="nx">}</span><span class="err">,</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;robin&quot;</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">superhero</span><span class="w"> </span><span class="err">~=</span><span class="w"> </span><span class="err">%[</span><span class="w"> </span><span class="err">%</span><span class="nx">{</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="err">~=</span><span class="w"> </span><span class="nx">re</span><span class="err">|^(?</span><span class="nx">P</span><span class="err">&lt;</span><span class="nx">kind</span><span class="err">&gt;</span><span class="nx">bat</span><span class="err">.*)$|</span><span class="nx">}</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">id</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;something bad happened&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="guard-clauses">Guard clauses<a class="headerlink" href="#guard-clauses" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><img alt="guard clause grammar" src="grammar/diagram/Guard.png" /></p>
+</blockquote>
+<p>Guard expressions in Match case clauses enable matching data structures to be further filtered based on predicate expressions. For example they can be used to restrict the match to a subset of matching cases where appropriate.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">match</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="nx">record</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">%</span><span class="nx">{}</span><span class="w"> </span><span class="kd">when</span><span class="w"> </span><span class="nx">record</span><span class="err">.</span><span class="nx">log_level</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s">&quot;ERROR&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;non-error&quot;</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<h3 id="merge">Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><img alt="merge grammar" src="grammar/diagram/Merge.png" /></p>
+</blockquote>
+<p>Merge expressions defines a difference against a targetted record and applies that difference to produce a result record. Merge operations in <code>tremor-script</code> follow merge-semantics defined in <a href="https://tools.ietf.org/html/rfc7386">RFC 7386</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">merge</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">of</span><span class="w"> </span><span class="nx">{</span><span class="s">&quot;some&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;record&quot;</span><span class="nx">}</span><span class="w"> </span><span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Given</th>
+<th>Merge</th>
+<th>Result</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{"a":"b"}</code></td>
+<td><code>{"a":"c"}</code></td>
+<td><code>{"a":"c"}</code></td>
+<td>Insert/Update field 'a'</td>
+</tr>
+<tr>
+<td><code>{"a":"b"}</code></td>
+<td><code>{"b":"c"}</code></td>
+<td><code>{"a":"b", "b":"c"}</code></td>
+<td>Insert field 'b'</td>
+</tr>
+<tr>
+<td><code>{"a":"b"}</code></td>
+<td><code>{"a":null}</code></td>
+<td><code>{}</code></td>
+<td>Erase field 'a'</td>
+</tr>
+<tr>
+<td><code>{"a":"b","b":"c"}</code></td>
+<td><code>{"a":null}</code></td>
+<td><code>{"b":"c"}</code></td>
+<td>Erase field 'a'</td>
+</tr>
+<tr>
+<td><code>{"a": [{"b":"c"}]}</code></td>
+<td><code>{"a": [1]}</code></td>
+<td><code>{"a": [1]}</code></td>
+<td>Replace field 'a' with literal array</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch">Patch<a class="headerlink" href="#patch" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><img alt="patch grammar" src="grammar/diagram/Patch.png" /></p>
+</blockquote>
+<p>Patch operation grammar</p>
+<blockquote>
+<p><img alt="patch operation grammar" src="grammar/diagram/PatchOperation.png" /></p>
+</blockquote>
+<p>Patch expressions define a set of record level field operations to be applied to a target record in order to transform a targetted record. Patch allows fields to be: inserted where there was no field before; removed where there was a field before; updated where there was a field before; or inserted or updated regardless of whether or not there was a field before. Patch also allows field level merge operations on records or for the targetted document itself to be merged. Merge operations in patch are syntax sugar in that they are both based on the merge operation.</p>
+<p>Patch follows the semantics of <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> with the explicit exclusion of the <code>copy</code> and <code>move</code> operations and with the addition of an <code>upsert</code> operation the variant supported by <code>tremor-script</code></p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Expression</th>
+<th>Result</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>let foo = {"foo":"bar"}</code></td>
+<td><code>patch foo of insert "baz" =&gt; "qux" end</code></td>
+<td><code>{"foo":"bar","baz":"qux"}</code></td>
+<td>Add baz field</td>
+</tr>
+<tr>
+<td><code>let foo = {"foo":"bar","baz":"qux"}</code></td>
+<td><code>patch foo of erase "foo" end</code></td>
+<td><code>{"baz":"qux"}</code></td>
+<td>Erase foo and add baz field</td>
+</tr>
+<tr>
+<td><code>let foo = {"foo":"bar"}</code></td>
+<td><code>patch foo of upsert "foo" =&gt; null end</code></td>
+<td><code>{"foo":null}</code></td>
+<td>Set foo to null, or reset to null if field already exists</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-comprehensions">For comprehensions<a class="headerlink" href="#for-comprehensions" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><img alt="for grammar" src="grammar/diagram/For.png" /></p>
+</blockquote>
+<p>For Case Clause grammar</p>
+<blockquote>
+<p><img alt="for case clause grammar" src="grammar/diagram/ForCaseClause.png" /></p>
+</blockquote>
+<p>For expressions are case-based record or array comprehensions that can iterate over index/element or key/value pairs in record or array literals respectively.</p>
+<p>Given our book store example from above:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">wishlist</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">for</span><span class="w"> </span><span class="nx">store</span><span class="err">.</span><span class="nx">book</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">  </span><span class="kd">case</span><span class="w"> </span><span class="err">(</span><span class="nx">i</span><span class="err">,</span><span class="nx">e</span><span class="err">)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">for</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="kd">of</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">      </span><span class="kd">case</span><span class="w"> </span><span class="err">(</span><span class="nx">k</span><span class="err">,</span><span class="nx">v</span><span class="err">)</span><span class="w"> </span><span class="kd">when</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s">&quot;price&quot;</span><span class="w"> </span><span class="kc">and</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="mf">20.00</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">e</span><span class="err">.</span><span class="nx">title</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;isbn&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">e</span><span class="err">.</span><span class="nx">isbn</span><span class="w"> </span><span class="nx">}</span><span class="w"></span>
+<span class="w">      </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="nx">{}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">end</span><span class="w"></span>
+<span class="kd">end</span><span class="w"></span>
+</code></pre></div>
+<h3 id="state">State<a class="headerlink" href="#state" title="Permanent link">&para;</a></h3>
+<p>As part of the tremor <code>pipeline</code> processing, there are times when it's necessary to track state across events over time (eg: in order to exploit stateful algorithms for session tracking, or building and maintaining application state). For this purpose, a tremor <code>pipeline</code> is equipped with operator node-level state management and storage capabilities that persists for the running lifetime of a pipeline deployed into the tremor runtime.</p>
+<p>From tremor-script, this shared storage is accessbile via the <code>state</code> keyword, which allows for accessing the storage contents via <a href="#paths">path</a> expressions, akin to how the <code>event</code> keyword works (with the key difference being that the state storage is shared across events). On pipeline initialization, the state is initialized as <code>null</code> and users are free to set it to arbitrary value over the course of processing.</p>
+<p>Here's a tremor-script example demonstrating the usage of the <code>state</code> keyword -- it maintains a counter for the events coming in and emits the count alongside the event:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">match</span><span class="w"> </span><span class="nx">type</span><span class="err">::</span><span class="nx">is_null</span><span class="err">(</span><span class="kc">state</span><span class="err">)</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
+<span class="w">    </span><span class="kd">case</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="kc">state</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">{</span><span class="s">&quot;count&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="nx">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">default</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="kc">state</span><span class="err">.</span><span class="nx">count</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">state</span><span class="err">.</span><span class="nx">count</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">  </span><span class="kd">end</span><span class="err">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="nx">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;count&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">state</span><span class="err">.</span><span class="nx">count</span><span class="err">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;event&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="w"></span>
+<span class="w">  </span><span class="nx">}</span><span class="w"></span>
+</code></pre></div>
+<p>This will work as part of the <a href="../tremor-query/operators/#runtimetremor">runtime::tremor</a> operator confguration in the legacy pipeline yaml setup, and also as an embedded script in the <a href="../tremor-query/walkthrough/#scripts-and-operators">trickle definition</a> of the pipeline.</p>
+<p>A key thing to note is that by design, state is not shared across operator nodes in the pipeline. Therefore, if we have scripts across multiple nodes in the pipeline, the <code>state</code> keyword in each script allows access only to the local node-specific state storage, and not the state from any other operator nodes or something global to all the nodes.</p>
+<p>Since the state storage lives for the lifetime of a pipeline, state will not be persisted when the pipeline is undeployed or the host process is shut down.</p>
+<h2 id="extractors">Extractors<a class="headerlink" href="#extractors" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><img alt="test expression grammar" src="grammar/diagram/TestExpr.png" />
+<img alt="test literal grammar" src="grammar/diagram/TEST_LITERAL.png" />
+<img alt="test literal escape grammar" src="grammar/diagram/TEST_ESCAPE.png" /></p>
+</blockquote>
+<p>The language has pluggable support for a number of microformats with two basic modes of operation that enable predicate tests ( does a particular value match the expected micro-format ) and elementization ( if a value does match a specific micro-format, then extract and elementize accordingly ).</p>
+<p>The general form of a supported micro-format is as follows:</p>
+<div class="highlight"><pre><span></span><code>&lt;name&gt;|&lt;format&gt;|
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li>name - The key for the micro-format being used for testing or extraction</li>
+<li>format - An optional multi-line micro-format specific format encoding used for testing and extraction</li>
+</ul>
+<p>Formats can be spread out over multiple lines by adding a <code>\</code> as a last character of the line. Spaces at the start of the line will be truncated by the lowest number of leading spaces. So if 3 lines respectively have 2, 4, and 7 spaces then 2 spaces are going to be removed from each line leaving 0, 2, and 5 spaces at the start.</p>
+<p>The set of supported micro-formats at the time of writing are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Format</th>
+<th>Test mode</th>
+<th>Return type</th>
+<th>Extraction mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>base64</strong></td>
+<td>Not required</td>
+<td>Tests if underlying value is a base64 encoded string</td>
+<td><strong>string</strong></td>
+<td>Performs a base64 decode, returning a UTF-8 encoded string</td>
+</tr>
+<tr>
+<td><strong>glob</strong></td>
+<td>Glob expression</td>
+<td>Tests if underlying value conforms to the supplied glob pattern</td>
+<td><strong>string</strong></td>
+<td>Returns the value that matches the glob ( identity extraction )</td>
+</tr>
+<tr>
+<td><strong>re</strong></td>
+<td>PCRE regular expression with match groups</td>
+<td>Tests if underlying value conforms to supplied PCRE format</td>
+<td><strong>record</strong></td>
+<td>Extracts matched named values into a record</td>
+</tr>
+<tr>
+<td><strong>cidr</strong></td>
+<td>Plain IP or netmask</td>
+<td>Tests if underlying value conforms to cidr specification</td>
+<td><strong>record</strong></td>
+<td>Extracted numeric ip range, netmask and relevant information as a record</td>
+</tr>
+<tr>
+<td><strong>kv</strong></td>
+<td>Logstash KV specification</td>
+<td>Tests if the underlying value conforms to Logstash KV specification</td>
+<td><strong>record</strong></td>
+<td>Returns a key/value record</td>
+</tr>
+<tr>
+<td><strong>dissect</strong></td>
+<td>Logstash Dissect specification</td>
+<td>Tests if the underlying value conforms to Logstash Dissect specification</td>
+<td><strong>record</strong></td>
+<td>Returns a record of matching extractions based on supplied specification</td>
+</tr>
+<tr>
+<td><strong>grok</strong></td>
+<td>Logstash Grok specification</td>
+<td>Tests if the underlying value conforms to Logstash Grok specification</td>
+<td><strong>record</strong></td>
+<td>Returns a record of matching extractions based on supplied specification</td>
+</tr>
+<tr>
+<td><strong>influx</strong></td>
+<td>Not required</td>
+<td>Tests if the underlying value conforms to Influx line protocol specification</td>
+<td><strong>record</strong></td>
+<td>Returns an influx line protocol record matching extractions based on supplied specification</td>
+</tr>
+<tr>
+<td><strong>json</strong></td>
+<td>Not required</td>
+<td>Tests if the underlying value is json encoded</td>
+<td><strong>depends on value</strong></td>
+<td>Returns a hydrated <code>tremor-script</code> value upon extraction</td>
+</tr>
+</tbody>
+</table>
+<p>There is no concept of <em>injector</em> in the <code>tremor-script</code> language that is analogous to extractors. Where relevant the language supports functions that support the underlying operation ( such as base64 encoding ) and let expressions can be used for assignments.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../tremor-query/recipes/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Recipes
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="modules/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Modules
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
