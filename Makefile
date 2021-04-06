@@ -26,7 +26,7 @@ tremor-runtime: thunk
 
 pages/docs/tremor-script/stdlib: tremor-runtime
 	cd tremor-runtime && make stdlib-doc
-	-rm -r docs/tremor-script/stdlib
+	-rm -r pages/docs/tremor-script/stdlib
 	cp -r tremor-runtime/docs pages/docs/tremor-script/stdlib
 
 pages/docs/operations/cli.md: tremor-runtime
