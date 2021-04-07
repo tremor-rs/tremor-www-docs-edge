@@ -23,7 +23,7 @@ jobs:
       - name: Install tremor lexer
         run: ./.github/scripts/install-lexer.sh
       - name: generate stdlib
-        run:  make all
+        run:  make clean all
       - name: Build docs
         run: cd pages && mkdocs build
 #      - name: Add CNAME
