@@ -2767,10 +2767,10 @@ Supported payloads are:</p>
 <p class="admonition-title">Note</p>
 <p>If type is not specified <code>A</code> records will be looked up</p>
 </div>
-<p>Responses are an Array of objects denoting the type of record found as a key, followed by the entry as a string (please consult your DNS manual for the return value of different record types):</p>
+<p>Responses are an Array of objects denoting the type of record found as a key, followed by the entry as a string and a <code>ttl</code> for the record (please consult your DNS manual for the return value of different record types):</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
-  <span class="p">{</span><span class="nt">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.3.4&quot;</span><span class="p">},</span>
-  <span class="p">{</span><span class="nt">&quot;CNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;www.tremor.rs&quot;</span><span class="p">}</span>
+  <span class="p">{</span><span class="nt">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.3.4&quot;</span><span class="p">,</span> <span class="nt">&quot;ttl&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">},</span>
+  <span class="p">{</span><span class="nt">&quot;CNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;www.tremor.rs&quot;</span><span class="p">,</span> <span class="nt">&quot;ttl&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <h3 id="elastic">elastic<a class="headerlink" href="#elastic" title="Permanent link">&para;</a></h3>
