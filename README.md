@@ -6,4 +6,4 @@ main branch.
 ---
 
 This is not the main tremor [docs](https://github.com/tremor-rs/tremor-www-docs) site
-and documentation is not masnaged in this repo!
+and documentation is not managed in this repo!
