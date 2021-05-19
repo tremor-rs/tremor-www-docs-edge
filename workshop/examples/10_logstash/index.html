@@ -2187,7 +2187,7 @@
 <p class="admonition-title">Note</p>
 <p>Can be installed via <code>cargo install websocat</code> for the lazy/impatient amongst us</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ xzcat demo/data/apache_access_logs.xz <span class="p">|</span> websocat ws://localhost:4242
+<div class="highlight"><pre><span></span><code>$ xzcat logs.xz <span class="p">|</span> websocat ws://localhost:4242
 ...
 </code></pre></div>
 <p>Open the <a href="http://localhost:5601/app/kibana#/management/kibana/indices/">Kibana index management</a> and create indexes to view the data.</p>
