@@ -1407,6 +1407,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tcp-example-for-tls" class="md-nav__link">
+    tcp example for TLS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#udp" class="md-nav__link">
     udp
   </a>
@@ -2402,6 +2409,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tcp-example-for-tls" class="md-nav__link">
+    tcp example for TLS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#udp" class="md-nav__link">
     udp
   </a>
@@ -3069,6 +3083,11 @@ to pipelines.</p>
 <ul>
 <li><code>host</code> - The IP to listen on</li>
 <li><code>port</code> - The Port to listen on</li>
+<li><code>tls</code> - The tls config for sending messages via TCP/TLS<ul>
+<li><code>cert</code> - The certificate PEM file (X.509 certificate)</li>
+<li><code>key</code> - The private Keys PEM file (RSA or PKCS8 format)</li>
+</ul>
+</li>
 </ul>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
@@ -3092,6 +3111,20 @@ to pipelines.</p>
     <span class="nt">config</span><span class="p">:</span>
       <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
       <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12201</span>
+</code></pre></div>
+<h3 id="tcp-example-for-tls">tcp example for TLS<a class="headerlink" href="#tcp-example-for-tls" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tls</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+    <span class="nt">preprocessors</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lines</span>
+    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">config</span><span class="p">:</span>
+      <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">65535</span>
+      <span class="nt">tls</span><span class="p">:</span>
+        <span class="nt">cert</span><span class="p">:</span> <span class="s">&quot;path/to/cert.pem&quot;</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="s">&quot;path/to/key.pem&quot;</span>
 </code></pre></div>
 <h3 id="udp">udp<a class="headerlink" href="#udp" title="Permanent link">&para;</a></h3>
 <p>The UDP onramp allows receiving data via UDP datagrams.</p>
