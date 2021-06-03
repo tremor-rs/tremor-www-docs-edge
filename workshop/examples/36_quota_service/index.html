@@ -2177,15 +2177,15 @@ $ curl -XGET localhost:8139/quotas/index_default
 <p>Changes to quotas are applied immediately, no scheduled reads of the quotas are necessary, no downtime to change configuration is required. What we get is updated quota handling in real-time:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># set rate for tremolo class of logs to 1 message per second</span>
 <span class="c1"># returns the old, overwritten state on success</span>
-$ curl -XPUT -H<span class="s1">&#39;Content-Type: application/json&#39;</span> http://localhost:8139/quotas/tremolo<span class="s2">&quot; -d&#39;1&#39;</span>
+$ curl -XPUT -H<span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="s2">&quot;http://localhost:8139/quotas/tremolo&quot;</span> -d<span class="s1">&#39;1&#39;</span>
 
-<span class="s2">{&quot;</span>tremolo<span class="s2">&quot;: 100}</span>
+<span class="o">{</span><span class="s2">&quot;tremolo&quot;</span>: <span class="m">100</span><span class="o">}</span>
 
-<span class="s2"># If you are monitoring the tremolo logs from kibana, you should now see the (debug) field `tremor_class_rate` change to 1 (from 100).</span>
-<span class="s2"># More importantly, the log volume visible there should have also decreased.</span>
+<span class="c1"># If you are monitoring the tremolo logs from kibana, you should now see the (debug) field `tremor_class_rate` change to 1 (from 100).</span>
+<span class="c1"># More importantly, the log volume visible there should have also decreased.</span>
 
-<span class="s2"># to remove the rate override for a given quota (i.e. switch to the default, hard-coded rate)</span>
-<span class="s2"># curl -XDELETE http://localhost:8139/quotas/tremolo</span>
+<span class="c1"># to remove the rate override for a given quota (i.e. switch to the default, hard-coded rate)</span>
+<span class="c1"># curl -XDELETE http://localhost:8139/quotas/tremolo</span>
 </code></pre></div>
 <p>Example kibana view demonstrating the change in number of tremolo logs, after setting the quota dynamically from the above api:</p>
 <blockquote>

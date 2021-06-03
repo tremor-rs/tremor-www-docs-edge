@@ -3072,7 +3072,7 @@ config:
 <div class="highlight"><pre><span></span><code>tremor-stdin://&lt;tremor-host.local&gt;
 </code></pre></div>
 <h3 id="tcp">tcp<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h3>
-<p>This listens on a specified port for inbound tcp data.</p>
+<p>This listens on a specified port for inbound tcp data. TLS is supported.</p>
 <p>The onramp can leverage preprocessors to segment data before codecs are applied and events are forwarded
 to pipelines.</p>
 <p>The default <a href="../codecs/#json">codec</a> is <code>json</code>.</p>
@@ -3083,9 +3083,9 @@ to pipelines.</p>
 <ul>
 <li><code>host</code> - The IP to listen on</li>
 <li><code>port</code> - The Port to listen on</li>
-<li><code>tls</code> - The tls config for sending messages via TCP/TLS<ul>
-<li><code>cert</code> - The certificate PEM file (X.509 certificate)</li>
-<li><code>key</code> - The private Keys PEM file (RSA or PKCS8 format)</li>
+<li><code>tls</code> - The TLS config for receiving messages via TCP/TLS. If provided this onramp expects TLS traffic.<ul>
+<li><code>cert</code> - The server certificate (or certificate chain) PEM file (X.509 certificate). Required for TLS.</li>
+<li><code>key</code> - The private Key PEM file (RSA or PKCS8 format). Required for TLS.</li>
 </ul>
 </li>
 </ul>
@@ -3113,6 +3113,7 @@ to pipelines.</p>
       <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12201</span>
 </code></pre></div>
 <h3 id="tcp-example-for-tls">tcp example for TLS<a class="headerlink" href="#tcp-example-for-tls" title="Permanent link">&para;</a></h3>
+<p>If the <code>tls</code> config is provided, this onramp acts as a TCP/TLS server and expects SSL/TLS traffic from clients:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tls</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>

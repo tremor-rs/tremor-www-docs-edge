@@ -1574,12 +1574,18 @@
     tcp
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="tcp">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tcp-example-for-tls" class="md-nav__link">
-    tcp example for TLS
+  <a href="#tls-support" class="md-nav__link">
+    TLS Support
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2709,12 +2715,18 @@
     tcp
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="tcp">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tcp-example-for-tls" class="md-nav__link">
-    tcp example for TLS
+  <a href="#tls-support" class="md-nav__link">
+    TLS Support
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4021,7 +4033,7 @@ If <code>raw</code> is set to true, the event data will be put on stdout as is.<
       <span class="nt">prefix</span><span class="p">:</span> <span class="s">&quot;&gt;&gt;&gt;</span><span class="nv"> </span><span class="s">&quot;</span>
 </code></pre></div>
 <h3 id="tcp">tcp<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h3>
-<p>This connects on a specified port for distributing outbound TCP data.</p>
+<p>This connects on a specified port for distributing outbound TCP data. TLS is supported via <a href="https://github.com/ctz/rustls">rustls</a>.</p>
 <p>The offramp can leverage postprocessors to frame data after codecs are applied and events are forwarded
 to external TCP protocol distribution endpoints.</p>
 <p>The default <a href="../codecs/#json">codec</a> is <code>json</code>.</p>
@@ -4032,13 +4044,12 @@ to external TCP protocol distribution endpoints.</p>
 <li><code>is_non_blocking</code> - Is the socket configured as non-blocking ( default: false )</li>
 <li><code>ttl</code> - Set the socket's time-to-live ( default: 64 )</li>
 <li><code>is_no_delay</code> - Set the socket's Nagle ( delay ) algorithm to off ( default: true )</li>
-<li><code>tls</code> - The tls config or a boolean value to indicate the use of TLS stream ( default: TCP stream )<ul>
-<li><code>cafile</code> - The CA (PEM) file (load the default webpki-roots if no file is provided) </li>
-<li><code>domain</code> - The domain to connect to (Takes the host parameter if not provided)</li>
+<li><code>tls</code> - If set to <code>true</code> or a detailed TLS config with the keys below, will wrap the TCP socket with a TLS session. ( default: <code>false</code> )<ul>
+<li><code>cafile</code> - If provided, only server certificates signed by the Certificate Authority represented by the root certificate in <code>cafile</code> are accepted. If not provided, all root certificated distributed by Mozilla via <a href="https://github.com/rustls/webpki-roots">webpki-roots</a> are loaded.</li>
+<li><code>domain</code> - if provided, this will be the domain to verify the TLS certificate against. It might differ to <code>host</code>, especially if <code>host</code> is given as IP address. If not provided, the <code>host</code> config is used as domain.</li>
 </ul>
 </li>
 </ul>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">offramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
@@ -4051,7 +4062,23 @@ to external TCP protocol distribution endpoints.</p>
       <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;localhost&quot;</span>
       <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9000</span>
 </code></pre></div>
-<h3 id="tcp-example-for-tls">tcp example for TLS<a class="headerlink" href="#tcp-example-for-tls" title="Permanent link">&para;</a></h3>
+<h4 id="tls-support">TLS Support<a class="headerlink" href="#tls-support" title="Permanent link">&para;</a></h4>
+<p>TLS support is enabled by providing either <code>tls: true</code> or a detailed config.</p>
+<p>When providing <code>tls: true</code>, the TCP offramp is verifying the server it connects to and its certificate against the <code>host</code> config, and a set of common root-certificates provided by Mozilla via <a href="https://github.com/rustls/webpki-roots">webpki-roots</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">offramp</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+    <span class="nt">postprocessors</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">length-prefixed</span>
+    <span class="nt">config</span><span class="p">:</span>
+      <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;example.com&quot;</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">443</span>
+      <span class="nt">tls</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>This behaviour can be tuned by providing a detailed config. If <code>tls.cafile</code> is provided, the TCP offramp will only accept server certificates signed (directly or indirectly via a server-provided certificate chain) by the given root-certificate. This is useful for testing against self-signed certificates. In this case the self signed certificate needs to provided via <code>tls.cafile</code>. If <code>tls.domain</code> is provided, this value will be used instead of the <code>host</code> config to verify the domain name provided in the server certificate. This is especially useful if an IP address is used as <code>host</code> config.</p>
+<p>Client certificates are not supported.</p>
+<p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">offramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tls</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
@@ -4060,8 +4087,10 @@ to external TCP protocol distribution endpoints.</p>
       <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
       <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">65535</span>
       <span class="nt">tls</span><span class="p">:</span>
-        <span class="nt">cafile</span><span class="p">:</span> <span class="s">&quot;path/to/cafile&quot;</span>
+        <span class="nt">cafile</span><span class="p">:</span> <span class="s">&quot;path/to/custom_ca.pem&quot;</span>
+        <span class="nt">domain</span><span class="p">:</span> <span class="s">&quot;localhost&quot;</span>
 </code></pre></div>
+<p>For testing purposes, self-signed certificates need the Subject Alternative Name extension, otherwise setting up the onramp will fail with a <code>BadDER</code> Error. Adding this when generating a self-signed certificate can be done by passing <code>-addext 'subjectAltName = DNS:&lt;DOMAIN&gt;'</code> via <code>openssl</code> command line or by adding it to <code>openssl.cfg</code> as described in the <a href="https://www.openssl.org/docs/man1.1.1/man5/x509v3_config.html#Subject-Alternative-Name">openssl manual</a>.</p>
 <h3 id="udp">udp<a class="headerlink" href="#udp" title="Permanent link">&para;</a></h3>
 <p>The UDP offramp sends data to a given host and port as UDP datagram.</p>
 <p>The default <a href="../codecs/#json">codec</a> is <code>json</code>.</p>
