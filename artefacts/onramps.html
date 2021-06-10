@@ -2912,6 +2912,13 @@ If an event failed during processing within the pipeline or at a downstream offr
     <span class="nt">config</span><span class="p">:</span>
       <span class="nt">interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10000</span>
 </code></pre></div>
+<p>The data looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;onramp&quot;</span><span class="o">:</span> <span class="s2">&quot;metronome&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ingest_ns&quot;</span><span class="o">:</span> <span class="mf">12345</span><span class="p">,</span> <span class="c1">// time</span>
+  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mf">42</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="nats">nats<a class="headerlink" href="#nats" title="Permanent link">&para;</a></h3>
 <p>The <code>nats</code> onramp connects to Nats server(s) and subscribes to a specified subject.</p>
 <p>The default <a href="codecs.html#json">codec</a> is <code>json</code>.</p>
