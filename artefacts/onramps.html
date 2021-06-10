@@ -2676,6 +2676,16 @@ Supported configuration options are:</p>
 <p>Cron entries that are historic or in the past ( relative to the current UTC time ) will be ignored.
 Cron entries beyond 2038 will not work due to underlying libraries ( <code>rust</code>, <code>chrono</code>, <code>cron.rs</code> ) suffering
 from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 problem</a>.</p>
+<p>The data looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;onramp&quot;</span><span class="o">:</span> <span class="s2">&quot;crononome&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ingest_ns&quot;</span><span class="o">:</span> <span class="mf">12345</span><span class="p">,</span> <span class="c1">// the time</span>
+  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mf">42</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;the name of the trigger&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;payload&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;configured&quot;</span><span class="p">,</span> <span class="s2">&quot;payload&quot;</span><span class="p">,</span> <span class="s2">&quot;perhaps&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;the&quot;</span><span class="o">:</span> <span class="s2">&quot;trigger&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="discord">discord<a class="headerlink" href="#discord" title="Permanent link">&para;</a></h3>
 <p><strong>This onramp can be linked</strong></p>
 <p>The <code>discord</code> onramp allows consuming events from the <a href="https://discord.com/developers/docs/intro">Discord API</a>. It uses the event structure as provided by <a href="https://docs.rs/serenity/0.10.2/serenity/">serenity</a> wrapped in event-named records.</p>
