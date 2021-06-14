@@ -2266,10 +2266,10 @@
 </code></pre></div>
 <h2 id="interactive-or-operational-deployments">Interactive or Operational deployments<a class="headerlink" href="#interactive-or-operational-deployments" title="Permanent link">&para;</a></h2>
 <p>Tremor's registry and repository can be configured dynamically via tremor's REST API, and via the tremor-cli tool. For example:</p>
-<div class="highlight"><pre><span></span><code>tremor api onramp publish blaster.yaml
-tremor api offramp publish offramp.yaml
-tremor api pipeline publish main.yaml
-tremor api binding publish benchmark.yaml
+<div class="highlight"><pre><span></span><code>tremor api onramp create blaster.yaml
+tremor api offramp create offramp.yaml
+tremor api pipeline create main.yaml
+tremor api binding create benchmark.yaml
 </code></pre></div>
 <p>Or via curl:</p>
 <div class="highlight"><pre><span></span><code>curl --data-binary @deployment.yaml http://localhost:9898/binding/default/01
