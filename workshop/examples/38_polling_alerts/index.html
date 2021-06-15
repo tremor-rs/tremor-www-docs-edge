@@ -2180,7 +2180,7 @@
 <h2 id="business-logic">Business Logic<a class="headerlink" href="#business-logic" title="Permanent link">&para;</a></h2>
 <h3 id="polling_1">Polling<a class="headerlink" href="#polling_1" title="Permanent link">&para;</a></h3>
 <p>This section deals with polling, in our case we want to query influxdb on a periodic interval.</p>
-<p>To this end we use a <code>metronome</code> onramp that fires an event every 10s. We send the events into <a href="./poll.trickle"><code>poll.trickle</code></a> where we create a influx request out of the metronom event.</p>
+<p>To this end we use a <code>metronome</code> onramp that fires an event every 10s. We send the events into <a href="etc/tremor/config/poll.trickle"><code>poll.trickle</code></a> where we create a influx request out of the metronom event.</p>
 <p>The <code>poll</code> pipeline then connects to the linked influx offramp to run the query.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># poll.trickle</span>
 <span class="c1"># This file is for for turning ticks into queries</span>
@@ -2212,7 +2212,7 @@
 <span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="alerting">Alerting<a class="headerlink" href="#alerting" title="Permanent link">&para;</a></h3>
-<p>The <a href="./alert.trickle"><code>alert.trickle</code></a> pipeline takes the reply from Influx and alert if the values we see are above a given limit.</p>
+<p>The <a href="etc/tremor/config/alert.trickle"><code>alert.trickle</code></a> pipeline takes the reply from Influx and alert if the values we see are above a given limit.</p>
 <p>Since the influx reply uses a unique datamodle, we need to unscramble the results, this sadly is a trail and error process based on what influx returns.</p>
 <p>Once we have extracted the data we can pass it into an alerting script that checks a few conditions in a given order. The first condition that is met will trigger the coresponding alert.</p>
 <p>You can adopt the alert conditions in the <code>with</code> section of the script.</p>

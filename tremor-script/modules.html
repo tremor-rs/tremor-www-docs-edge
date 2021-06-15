@@ -2059,18 +2059,6 @@ on the file system, relative to a root module path: Nested modules can be define
     +-- baz
       +-- badger.tremor
 </code></pre></div>
-<p>Assuming this module hierarchy is rooted at <code>/opt/my-project/lib</code> they can be registered with tremor
-by prepending this folder to the <code>TREMOR_PATH</code> environment variable</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TREMOR_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/my-project/lib:</span><span class="nv">$TREMOR_PATH</span><span class="s2">&quot;</span>
-</code></pre></div>
-<p>The <code>TREMOR_PATH</code> uses ':' on linux/unix to separate multiple module paths.</p>
-<p>The default places to look for your modules is <code>/usr/local/share/tremor</code> if <code>TREMOR_PATH</code> is not provided.</p>
-<p>The modules can be used using the <code>use</code> clause as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">use</span><span class="w"> </span><span class="nx">foo</span><span class="err">::</span><span class="nx">bar</span><span class="err">::</span><span class="nx">snot</span><span class="err">;</span><span class="w"> </span><span class="c1"># snot is a ref to &#39;foo/bar/snot.tremor&#39;</span>
-<span class="kd">use</span><span class="w"> </span><span class="nx">foo</span><span class="err">::</span><span class="nx">baz</span><span class="err">::</span><span class="nx">badger</span><span class="err">;</span><span class="w"> </span><span class="c1"># badger is a ref to &#39;foo/bar/badger.tremor&#39;</span>
-
-<span class="s">&quot;</span><span class="nx">#{snot</span><span class="err">::</span><span class="nx">snot}#{badger</span><span class="err">::</span><span class="nx">badger}</span><span class="s">&quot;</span><span class="err">;</span><span class="w"> </span><span class="c1"># emits an interpolated string</span>
-</code></pre></div>
 <p>The same modular hierarchy can be defined as nested module declarations as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">mod</span><span class="w"> </span><span class="nx">foo</span><span class="w"> </span><span class="kd">with</span><span class="w"></span>
 <span class="w">  </span><span class="kd">mod</span><span class="w"> </span><span class="nx">bar</span><span class="w"> </span><span class="kd">with</span><span class="w"></span>
@@ -2085,6 +2073,25 @@ by prepending this folder to the <code>TREMOR_PATH</code> environment variable</
 <span class="kd">let</span><span class="w"> </span><span class="nx">badger</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">foo</span><span class="err">::</span><span class="nx">baz</span><span class="err">::</span><span class="nx">badger</span><span class="err">;</span><span class="w"></span>
 
 <span class="s">&quot;</span><span class="nx">#{snot}</span><span class="s">-</span><span class="nx">#{badger}</span><span class="s">&quot;</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>Assuming this module hierarchy is rooted at <code>/opt/my-project/lib</code> they can be registered with tremor
+by prepending this folder to the <code>TREMOR_PATH</code> environment variable</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TREMOR_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/my-project/lib:</span><span class="nv">$TREMOR_PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h2 id="defaults">Defaults<a class="headerlink" href="#defaults" title="Permanent link">&para;</a></h2>
+<p>The <code>TREMOR_PATH</code> uses ':' on linux/unix to separate multiple module paths.</p>
+<p>The default places to look for your modules is <code>/usr/local/share/tremor</code> if <code>TREMOR_PATH</code> is not provided.</p>
+<p>The default place for the <em>tremor standard library</em> is <code>/usr/share/tremor/lib</code>, so the full <code>TREMOR_PATH</code> default is</p>
+<ul>
+<li><code>/usr/local/share/tremor</code></li>
+<li><code>/usr/share/tremor/lib</code></li>
+</ul>
+<h2 id="referencing-modules-with-use">Referencing Modules with <code>use</code><a class="headerlink" href="#referencing-modules-with-use" title="Permanent link">&para;</a></h2>
+<p>The modules can be used using the <code>use</code> clause as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">use</span><span class="w"> </span><span class="nx">foo</span><span class="err">::</span><span class="nx">bar</span><span class="err">::</span><span class="nx">snot</span><span class="err">;</span><span class="w"> </span><span class="c1"># snot is a ref to &#39;foo/bar/snot.tremor&#39;</span>
+<span class="kd">use</span><span class="w"> </span><span class="nx">foo</span><span class="err">::</span><span class="nx">baz</span><span class="err">::</span><span class="nx">badger</span><span class="err">;</span><span class="w"> </span><span class="c1"># badger is a ref to &#39;foo/bar/badger.tremor&#39;</span>
+
+<span class="s">&quot;</span><span class="nx">#{snot</span><span class="err">::</span><span class="nx">snot}#{badger</span><span class="err">::</span><span class="nx">badger}</span><span class="s">&quot;</span><span class="err">;</span><span class="w"> </span><span class="c1"># emits an interpolated string</span>
 </code></pre></div>
 <p>Modules can be loaded via the <code>use</code> clause which in turn loads a module from the physical file system via the module path.</p>
 <p>Inline and externalized modules can be used separately or together as appropriate.</p>

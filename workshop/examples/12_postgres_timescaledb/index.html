@@ -2162,9 +2162,9 @@ Tremor will poll in regular <code>interval_ms</code>.</p>
 intention is to demonstrate intermediate record format which is accepted by
 <code>postgres</code> offramp.</p>
 <h2 id="business-logic">Business Logic<a class="headerlink" href="#business-logic" title="Permanent link">&para;</a></h2>
-<p>In <a href="etc/tremor/config/01_pipeline.yaml"><code>01_pipeline.yaml</code></a> we register two
-pipelines: <code>postgres-things</code> for data coming from a PostgreSQL database and
-<code>crononome-things</code> coming from <code>crononome</code> at regular interval of <code>5s</code>.</p>
+<p>We have two pipelines.
+- <a href="etc/tremor/config/postgres.trickle"><code>postgres.trickle</code></a> for data coming from a PostgreSQL database
+- <a href="etc/tremor/config/crononome.trickle"><code>crononome.trickle</code></a> for events coming from the <code>crononome</code> onramp at a regular interval of <code>5s</code>.</p>
 <h2 id="command-line-testing-during-logic-development">Command line testing during logic development<a class="headerlink" href="#command-line-testing-during-logic-development" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ docker-compose up
   ... lots of logs ...
