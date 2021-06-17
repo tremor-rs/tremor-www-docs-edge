@@ -2332,15 +2332,15 @@
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lines</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">remove-empty</span>
 </code></pre></div>
-<p>Note: the proliferation of various lines preprocessors here will go away once preprocessors <a href="https://github.com/tremor-rs/tremor-rfcs/pull/31">support configuration</a>.</p>
+<p>Note: The proliferation of various lines preprocessors here will go away once preprocessors <a href="https://github.com/tremor-rs/tremor-rfcs/pull/31">support configuration</a>.</p>
 <h3 id="lines-null">lines-null<a class="headerlink" href="#lines-null" title="Permanent link">&para;</a></h3>
-<p>Variant of the <a href="#lines">lines</a> preprocessor, that uses null byte <code>\0</code> as the line separator.</p>
+<p>Variant of the <a href="#lines">lines</a> preprocessor that uses null byte <code>\0</code> as the line separator.</p>
 <h3 id="lines-pipe">lines-pipe<a class="headerlink" href="#lines-pipe" title="Permanent link">&para;</a></h3>
-<p>Variant of the <a href="#lines">lines</a> preprocessor, that uses pipe character <code>|</code> as the line separator.</p>
+<p>Variant of the <a href="#lines">lines</a> preprocessor that uses pipe character <code>|</code> as the line separator.</p>
 <h3 id="lines-no-buffer">lines-no-buffer<a class="headerlink" href="#lines-no-buffer" title="Permanent link">&para;</a></h3>
-<p>Variant of the <a href="#lines">lines</a> preprocessor, that does <em>not</em> buffer any data that may be present after the last line separator -- the fragment is forwarded as is (i.e. treated as a full event).</p>
+<p>Variant of the <a href="#lines">lines</a> preprocessor that does <em>not</em> buffer any data that may be present after the last line separator -- the fragment is forwarded as is (i.e. treated as a full event).</p>
 <h3 id="lines-cr-no-buffer">lines-cr-no-buffer<a class="headerlink" href="#lines-cr-no-buffer" title="Permanent link">&para;</a></h3>
-<p>Variant of the <a href="#lines-no-buffer">lines-no-buffer</a> preprocessor, that uses character 13 <code>\r</code> (<a href="https://en.wikipedia.org/wiki/Carriage_return#Computers">carriage return</a>) as the line separator.</p>
+<p>Variant of the <a href="#lines-no-buffer">lines-no-buffer</a> preprocessor that uses character 13 <code>\r</code> (<a href="https://en.wikipedia.org/wiki/Carriage_return#Computers">carriage return</a>) as the line separator.</p>
 <h3 id="base64">base64<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h3>
 <p>Decodes base64 encoded data to the raw bytes.</p>
 <h3 id="decompress">decompress<a class="headerlink" href="#decompress" title="Permanent link">&para;</a></h3>
@@ -2357,16 +2357,16 @@
 <h3 id="gzip">gzip<a class="headerlink" href="#gzip" title="Permanent link">&para;</a></h3>
 <p>Decompress GZ compressed payload.</p>
 <h3 id="zlib">zlib<a class="headerlink" href="#zlib" title="Permanent link">&para;</a></h3>
-<p>Decompress Zlib ( deflate ) compressed payload.</p>
+<p>Decompress Zlib (deflate) compressed payload.</p>
 <h3 id="xz">xz<a class="headerlink" href="#xz" title="Permanent link">&para;</a></h3>
-<p>Decompress Xz2 ( 7z ) compressed payload.</p>
+<p>Decompress Xz2 (7z) compressed payload.</p>
 <h3 id="snappy">snappy<a class="headerlink" href="#snappy" title="Permanent link">&para;</a></h3>
-<p>Decompress framed snappy compressed payload ( does not support raw snappy ).</p>
+<p>Decompress framed snappy compressed payload (does not support raw snappy).</p>
 <h3 id="lz4">lz4<a class="headerlink" href="#lz4" title="Permanent link">&para;</a></h3>
 <p>Decompress Lz4 compressed payload.</p>
 <h3 id="gelf-chunking">gelf-chunking<a class="headerlink" href="#gelf-chunking" title="Permanent link">&para;</a></h3>
 <p>Reassembles messages that were split apart using the <a href="https://docs.graylog.org/en/3.0/pages/gelf.html#chunking">GELF chunking protocol</a>.</p>
-<p>If the GELF messages were sent compressed, you can decompress them by chaining the <a href="#decompress">decompress</a> preprocessor. An example is documented <a href="onramps.html#udp-onramp-example-for-gelf">here</a> -- you may need to apply <code>decompress</code> either before and/or after the reassembly here, depending on how your GELF client(s) behave.</p>
+<p>If the GELF messages were sent compressed, you can decompress them by chaining the <a href="#decompress">decompress</a> preprocessor. An example is documented <a href="onramps.html#udp-onramp-example-for-gelf">here</a> -- you may need to apply <code>decompress</code> before and/or after the reassembly here, depending on how your GELF client(s) behave.</p>
 <h3 id="remove-empty">remove-empty<a class="headerlink" href="#remove-empty" title="Permanent link">&para;</a></h3>
 <p>Removes empty messages (aka zero len).</p>
 <h3 id="length-prefixed">length-prefixed<a class="headerlink" href="#length-prefixed" title="Permanent link">&para;</a></h3>
