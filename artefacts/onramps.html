@@ -1430,6 +1430,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#udp-onramp-example-for-syslog" class="md-nav__link">
+    udp onramp example for syslog
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2432,6 +2439,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#udp-onramp-example-for-syslog" class="md-nav__link">
+    udp onramp example for syslog
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2575,7 +2589,7 @@ consumer, connecting to a set of topics and ingesting Kafka record data.</p>
 <h3 id="amqp">amqp<a class="headerlink" href="#amqp" title="Permanent link">&para;</a></h3>
 <p>The <code>amqp</code> onramp allows consuming events from an <a href="https://www.amqp.org">AMQP</a> broker. It uses <a href="https://docs.rs/lapin/1.6.8/lapin/">lapin</a> for an AMQP 0.9.1 protocol implementation.</p>
 <p>Example:</p>
-<p><div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">amqp</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">amqp</span>
     <span class="nt">config</span><span class="p">:</span>
@@ -2590,7 +2604,7 @@ consumer, connecting to a set of topics and ingesting Kafka record data.</p>
       <span class="nt">routing_key</span><span class="p">:</span> <span class="s">&quot;#&quot;</span>
       <span class="nt">exchange</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
 </code></pre></div>
-Supported configuration options are:</p>
+<p>Supported configuration options are:</p>
 <ul>
 <li><code>amqp_addr</code> - an AMQP URI. Format: String, required. For more details see <a href="https://www.rabbitmq.com/uri-spec.html">AMQP 0.9.1 URI spec</a>.</li>
 <li><code>exchange</code> - Specifies the exchange to bind the configured queue to. Format: String, optional, Default: the empty string, the default exchange.</li>
@@ -2693,25 +2707,26 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
 <p>The <code>discord</code> onramp allows consuming events from the <a href="https://discord.com/developers/docs/intro">Discord API</a>. It uses the event structure as provided by <a href="https://docs.rs/serenity/0.10.2/serenity/">serenity</a> wrapped in event-named records.</p>
 <p>Replies sent to this onramp can perform multiple operations:</p>
 <h4 id="guild-related">Guild related<a class="headerlink" href="#guild-related" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;guild&quot;</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>         <span class="err">//</span> <span class="err">guild</span> <span class="err">id</span><span class="p">,</span> <span class="err">required</span>
-  <span class="err">//</span> <span class="err">member</span> <span class="err">sec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">required</span>
-  <span class="nt">&quot;member&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>      <span class="err">//</span> <span class="err">member</span> <span class="err">id</span><span class="p">,</span> <span class="err">required</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;guild&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span> <span class="err">//</span> <span class="err">guild</span> <span class="err">id</span><span class="p">,</span> <span class="err">required</span>
+    <span class="err">//</span> <span class="err">member</span> <span class="err">sec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">required</span>
+    <span class="nt">&quot;member&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span> <span class="err">//</span> <span class="err">member</span> <span class="err">id</span><span class="p">,</span> <span class="err">required</span>
 
-    <span class="err">//</span> <span class="err">Roles</span> <span class="kc">t</span><span class="err">o</span> <span class="err">remove</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
-    <span class="nt">&quot;remove_roles&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="mi">3456</span><span class="p">,</span> <span class="err">//</span> <span class="err">...</span> <span class="err">role</span> <span class="err">ids</span>
-    <span class="p">],</span>
-    <span class="err">//</span> <span class="err">Roles</span> <span class="kc">t</span><span class="err">o</span> <span class="err">add</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
-    <span class="nt">&quot;add_roles&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="mi">4567</span><span class="p">,</span> <span class="err">//</span> <span class="err">...</span> <span class="err">role</span> <span class="err">ids</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;deafen&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="err">//</span> <span class="err">(u</span><span class="kc">n</span><span class="err">)dea</span><span class="kc">fen</span> <span class="kc">t</span><span class="err">he</span> <span class="err">member</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
-    <span class="nt">&quot;mute&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="err">//</span> <span class="err">(u</span><span class="kc">n</span><span class="err">)dea</span><span class="kc">fen</span> <span class="kc">t</span><span class="err">he</span> <span class="err">member</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
-  <span class="p">},</span>
-
-<span class="p">}}</span>
+      <span class="err">//</span> <span class="err">Roles</span> <span class="kc">t</span><span class="err">o</span> <span class="err">remove</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
+      <span class="nt">&quot;remove_roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">3456</span> <span class="err">//</span> <span class="err">...</span> <span class="err">role</span> <span class="err">ids</span>
+      <span class="p">],</span>
+      <span class="err">//</span> <span class="err">Roles</span> <span class="kc">t</span><span class="err">o</span> <span class="err">add</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
+      <span class="nt">&quot;add_roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">4567</span> <span class="err">//</span> <span class="err">...</span> <span class="err">role</span> <span class="err">ids</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;deafen&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="err">//</span> <span class="err">(u</span><span class="kc">n</span><span class="err">)dea</span><span class="kc">fen</span> <span class="kc">t</span><span class="err">he</span> <span class="err">member</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
+      <span class="nt">&quot;mute&quot;</span><span class="p">:</span> <span class="kc">true</span> <span class="err">//</span> <span class="err">(u</span><span class="kc">n</span><span class="err">)dea</span><span class="kc">fen</span> <span class="kc">t</span><span class="err">he</span> <span class="err">member</span><span class="p">,</span> <span class="err">op</span><span class="kc">t</span><span class="err">io</span><span class="kc">nal</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="message-related">Message related<a class="headerlink" href="#message-related" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2814,15 +2829,15 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gsub</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gsub</span>
-    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">json</span>  
+    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
     <span class="nt">preprocessors</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gzip</span>
     <span class="nt">config</span><span class="p">:</span>
-      <span class="nt">pem</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp.pem</span> 
-      <span class="nt">subscription</span><span class="p">:</span> <span class="s">&#39;tremor-sub&#39;</span>
+      <span class="nt">pem</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp.pem</span>
+      <span class="nt">subscription</span><span class="p">:</span> <span class="s">&quot;tremor-sub&quot;</span>
 </code></pre></div>
 <p>We get the meta data as response that includes the message id and the acknowledgement id of the message.</p>
-<p><strong>Response</strong>:
+<p><strong>Response</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;hello&quot;</span><span class="o">:</span> <span class="s2">&quot;folks!!&quot;</span>
@@ -2832,12 +2847,12 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
     <span class="s2">&quot;acknowledgement_id&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;acknowledgement_id&gt;&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <p><strong><em>Where</em></strong></p>
 <ul>
 <li><code>&lt;data&gt;</code> - The data received as message.</li>
 <li><code>&lt;message-id&gt;</code> - The message id assigned by the Google Cloud Pubsub api.</li>
-<li><code>&lt;acknowledgement_id&gt;</code> - The acknowedgement id assigned by the Google Cloud Pubsub api. </li>
+<li><code>&lt;acknowledgement_id&gt;</code> - The acknowedgement id assigned by the Google Cloud Pubsub api.</li>
 </ul>
 <h3 id="kafka">Kafka<a class="headerlink" href="#kafka" title="Permanent link">&para;</a></h3>
 <p>The Kafka onramp connects to one or more Kafka topics. It uses <code>librdkafka</code> to handle connections and can use the full set of <a href="https://github.com/edenhill/librdkafka/blob/v1.5.0/CONFIGURATION.md">librdkafka 1.5.0 configuration options</a>.</p>
@@ -2856,16 +2871,8 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
 </ul>
 <p>Set metadata variables are:</p>
 <ul>
-<li><code>$kafka</code> - Record consisting of two optional keys:<ul>
-<li><code>headers</code>: A record denoting the <a href="https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/connect/header/Header.html">headers</a> for the message (if any).</li>
-<li><code>key</code>: The key used for this message in bytes (if any).</li>
-<li><code>topic</code>: The topic the message was on (if any).</li>
-<li><code>offset</code>: The offset in the partition the message was on (if any).</li>
-<li><code>partition</code>: The partition the message was on (if any).</li>
-<li><code>timestamp</code>: The timestamp provided by <code>kafka</code> in milliseconds (if any).
-Example:</li>
-</ul>
-</li>
+<li><code>$kafka</code> - Record consisting of two optional keys: - <code>headers</code>: A record denoting the <a href="https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/connect/header/Header.html">headers</a> for the message (if any). - <code>key</code>: The key used for this message in bytes (if any). - <code>topic</code>: The topic the message was on (if any). - <code>offset</code>: The offset in the partition the message was on (if any). - <code>partition</code>: The partition the message was on (if any). - <code>timestamp</code>: The timestamp provided by <code>kafka</code> in milliseconds (if any).
+  Example:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kafka-in</span>
@@ -2896,7 +2903,7 @@ Example:</li>
       <span class="nt">retry_failed_events</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
       <span class="nt">poll_interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
       <span class="nt">rdkafka_options</span><span class="p">:</span>
-        <span class="s">&#39;enable.auto.commit&#39;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+        <span class="s">&quot;enable.auto.commit&quot;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <h4 id="semantics-with-enableautocommit">Semantics with <code>enable.auto.commit</code><a class="headerlink" href="#semantics-with-enableautocommit" title="Permanent link">&para;</a></h4>
 <p>If <code>enable.auto.commit: false</code> is set in <code>rdkafka_options</code>, the consumer offset in kafka will only be committed when the event has successfully reached the other end of the pipeline (typically some <a href="offramps.html#offramps">offramp</a> ).
@@ -2942,7 +2949,7 @@ If an event failed during processing within the pipeline or at a downstream offr
 <li><code>hosts</code> - List of hosts to connect to.</li>
 <li><code>subject</code> - Subject to subscribe to for listening to messages.</li>
 <li><code>queue</code> - Optional queue to subscribe to.</li>
-<li><code>options</code> - Optional struct, which can be used to customize the connection to the server (see <a href="https://docs.rs/nats/0.9.8/nats/struct.Options.html"><code>nats.rs</code> configuration options</a> for more info):<ul>
+<li><code>options</code> - Optional struct, which can be used to customize the connection to the server (see <a href="https://docs.rs/nats/0.9.8/nats/struct.Options.html"><code>nats.rs</code> configuration options</a> for more info):</li>
 <li><code>token</code>: String; authenticate using a token.</li>
 <li><code>username</code>: String; authenticate using a username and password.</li>
 <li><code>password</code>: String; authenticate using a username and password.</li>
@@ -2956,19 +2963,17 @@ If an event failed during processing within the pipeline or at a downstream offr
 <li><code>tls</code>: Boolean; if true, sets tls for <em>all</em> server connections.</li>
 <li><code>root_cert</code>: String; path to a root certificate.</li>
 </ul>
-</li>
-</ul>
 <p>Set metadata variables are:</p>
 <ul>
 <li>
 <p><code>$nats</code>: Record consisting of the following metadata:</p>
-<ul>
-<li><code>$reply</code>: Reply associated with the message (if any).</li>
+</li>
+<li>
+<p><code>$reply</code>: Reply associated with the message (if any).</p>
+</li>
 <li><code>$headers</code>: Record denoting the headers for the message (if any).</li>
 </ul>
-</li>
-</ul>
-<p>Example:
+<p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nats-in</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nats</span>
@@ -2980,7 +2985,7 @@ If an event failed during processing within the pipeline or at a downstream offr
       <span class="nt">options</span><span class="p">:</span>
         <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nats-demo</span>
         <span class="nt">reconnect_buffer_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">&para;</a></h3>
 <p>PostgreSQL onramp.</p>
 <p>Supported configuration options are:</p>
@@ -3040,7 +3045,7 @@ config:
 <p>Tremor supports a limited set of built-in codecs used for well known MIME types (e.g. <code>application/json</code>, <code>application/yaml</code>, <code>text/plain</code>). In order to customize how certain <code>Content-Type</code>s are handled, provide a <code>codec_map</code> providing a mapping from MIME type to Tremor codec in the top level artefact config (where the <code>codec</code> is set).</p>
 <p>Set metadata variables:</p>
 <ul>
-<li><code>$request</code> - A record capturing the HTTP request attributes. Available fields within:<ul>
+<li><code>$request</code> - A record capturing the HTTP request attributes. Available fields within:</li>
 <li><code>url</code> - A record with the following standard URL fields (optional fields might not be present):<ul>
 <li><code>scheme</code> - String, typically <code>http</code></li>
 <li><code>username</code> - String, optional</li>
@@ -3055,18 +3060,14 @@ config:
 <li><code>method</code> - HTTP method used by the incoming request.</li>
 <li><code>headers</code> - A record that maps header name (lowercase string) to values (array of strings).</li>
 </ul>
-</li>
-</ul>
 <p>Used metadata variables:</p>
 <blockquote>
 <p>These variables can be used to dynamically change how responses are handled when using this onramp as <a href="../operations/linked-transports.html">linked transport</a>:</p>
 </blockquote>
 <ul>
-<li><code>$response</code> - A record capturing the HTTP response attributes. Available fields within:<ul>
+<li><code>$response</code> - A record capturing the HTTP response attributes. Available fields within:</li>
 <li><code>status</code> - Numeric HTTP status code. (optional. status code defaults to <code>200</code> when not set).</li>
 <li><code>headers</code> - A record that maps header name (string) to value (string or array of strings) (optional).</li>
-</ul>
-</li>
 </ul>
 <p>When not used as a linked onramp, the status code returned with the response is <code>202</code>.</p>
 <p>Example:</p>
@@ -3102,11 +3103,9 @@ to pipelines.</p>
 <ul>
 <li><code>host</code> - The IP to listen on.</li>
 <li><code>port</code> - The Port to listen on.</li>
-<li><code>tls</code> - The TLS config for receiving messages via TCP/TLS. If provided, this onramp expects TLS traffic.<ul>
+<li><code>tls</code> - The TLS config for receiving messages via TCP/TLS. If provided, this onramp expects TLS traffic.</li>
 <li><code>cert</code> - The server certificate (or certificate chain) PEM file (X.509 certificate). Required for TLS.</li>
 <li><code>key</code> - The private Key PEM file (RSA or PKCS8 format). Required for TLS.</li>
-</ul>
-</li>
 </ul>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
@@ -3179,6 +3178,15 @@ to pipelines.</p>
       <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
       <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12201</span>
 </code></pre></div>
+<h4 id="udp-onramp-example-for-syslog">udp onramp example for <a href="../codecs.md#syslog">syslog</a><a class="headerlink" href="#udp-onramp-example-for-syslog" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">syslog-udp</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">udp</span>
+    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">syslog</span>
+    <span class="nt">config</span><span class="p">:</span>
+      <span class="nt">host</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12201</span>
+</code></pre></div>
 <h3 id="ws">ws<a class="headerlink" href="#ws" title="Permanent link">&para;</a></h3>
 <p><strong>This onramp can be linked</strong></p>
 <p>WebSocket onramp. Receiving either binary or text packages from a WebSocket connection. the url is: <code>ws://&lt;host&gt;:&lt;port&gt;/</code>.</p>
@@ -3216,7 +3224,7 @@ Forwards tremor value variants of <code>logs</code>, <code>trace</code> and <cod
 <li><code>host</code> - String - The host or IP to listen on.</li>
 <li><code>port</code> - integer - The TCP port to listen on.</li>
 <li>'logs' - boolean - Is logging enabled for this instance? Defaults to <code>true</code>. Received <code>logs</code> events are dropped when <code>false</code>.</li>
-<li>'metrics' - boolean - Is metrics enabled for this instance? Defaults  to <code>true</code>. Received <code>metrics</code> events are dropped when <code>false</code>.</li>
+<li>'metrics' - boolean - Is metrics enabled for this instance? Defaults to <code>true</code>. Received <code>metrics</code> events are dropped when <code>false</code>.</li>
 <li>'trace' - boolean - Is trace enabled for this instance? Defaults to <code>true</code>. Received <code>trace</code> events are dropped when <code>false</code>.</li>
 </ul>
 <p>Pipelines that leverage the OpenTelemetry integration can use utility modules in the <code>cncf::otel</code> module to

@@ -16,7 +16,7 @@
     
     
       
-        <title>HTTP Proxy - Tremor Documentation</title>
+        <title>syslog udp - Tremor Documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#http-proxy" class="md-skip">
+        <a href="#syslog-udp" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HTTP Proxy
+              syslog udp
             
           </span>
         </div>
@@ -1291,14 +1291,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
       
       <label class="md-nav__link" for="__nav_10">
         Workshops
@@ -1539,14 +1537,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_4" type="checkbox" id="__nav_10_4" >
       
       <label class="md-nav__link" for="__nav_10_4">
         Linked Ramps
@@ -1586,85 +1582,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          HTTP Proxy
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../32_proxies_lt_http/index.html" class="md-nav__link">
         HTTP Proxy
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sources-and-sinks" class="md-nav__link">
-    Sources and sinks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#request-flow" class="md-nav__link">
-    Request flow
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#processing-logic" class="md-nav__link">
-    Processing logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing" class="md-nav__link">
-    Testing
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2101,32 +2023,19 @@
     Setup
   </a>
   
-    <nav class="md-nav" aria-label="Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sources-and-sinks" class="md-nav__link">
-    Sources and sinks
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    Environment
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#request-flow" class="md-nav__link">
-    Request flow
+      
+        <li class="md-nav__item">
+  <a href="#business-logic" class="md-nav__link">
+    Business Logic
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#processing-logic" class="md-nav__link">
-    Processing logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2149,113 +2058,68 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/tremor-rs/tremor-www-docs/edit/main/docs/workshop/examples/32_proxies_lt_http/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/tremor-rs/tremor-www-docs/edit/main/docs/workshop/examples/14_syslog_udp/README.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="http-proxy">HTTP Proxy<a class="headerlink" href="#http-proxy" title="Permanent link">&para;</a></h1>
-<p>Example HTTP proxy application built on top of Tremor and meant to be a demonstration of <a href="../../../operations/linked-transports.html">linked transports</a>.</p>
+                <h1 id="syslog-udp">syslog udp<a class="headerlink" href="#syslog-udp" title="Permanent link">&para;</a></h1>
+<p>The <code>syslog udp</code> example is demonstrate a number things:</p>
+<ol>
+<li>Encoding data in the <code>syslog</code> format.</li>
+<li>Sending data over <code>UDP</code>.</li>
+<li>Receiving data over <code>UDP</code>.</li>
+<li>Decoding <code>syslog</code> formated data.</li>
+</ol>
+<p>For easy digestion it is entirely selfcontained inside a singel tremor instance using multiple paralell pipelines, sinks and sources.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
+<p>All the code here is available in the <a href="https://github.com/tremor-rs/tremor-www-docs/tree/main/docs/workshop/examples/14_syslog_udp">git repository</a> as well and can be run with <code>docker compose up</code>.</p>
 </div>
-<p>All the code here is available in the <a href="https://github.com/tremor-rs/tremor-www-docs/tree/main/docs/workshop/examples/32_proxies_lt_http">git repository</a> as well.</p>
-<h3 id="sources-and-sinks">Sources and sinks<a class="headerlink" href="#sources-and-sinks" title="Permanent link">&para;</a></h3>
-<p>We configure a rest onramp listening on port 9139, that is meant to be a proxy for our <a href="../30_servers_lt_http/index.html">example HTTP server</a> (configured as en endpoint in the rest offramp here).</p>
-<div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rest</span>
-    <span class="nt">linked</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">config</span><span class="p">:</span>
-      <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
-      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9139</span>
+<h2 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
+<p>The <a href="etc/tremor/config/00_ramps.yaml">sources and sinks</a> we use are:</p>
+<ul>
+<li>The <code>metronome</code> source - to generate data in one second intervals.</li>
+<li>The <code>udp</code> sink - to send the data over <code>UDP</code>.</li>
+<li>The <code>udp</code> source - to receive data via <code>UDP</code>.</li>
+<li>The <code>stdout</code> sink - to display data decoded and re-formated as <code>JSON</code>.</li>
+</ul>
+<p>In addition we have two pipelines.</p>
+<p>The <a href="etc/tremor/config/consumer.trickle">producer</a> pipeline takes the tick from metronome and generates a syslog message. It is only handling message rewriting.</p>
+<p>The <a href="etc/tremor/config/consumer.trickle">consumer</a> pipeline takes the syslog message and forwards it. It is a passthrough pipeline.</p>
+<p>The <a href="etc/tremor/config/01_binding.yaml">binding</a> expresses those relations and gives the graph of onramp, pipeline and offramp. We hare left with those two workflows:</p>
+<div class="highlight"><pre><span></span><code>metronome -&gt; producer -&gt; syslog-udp-out
 
-<span class="nt">offramp</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">upstream</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rest</span>
-    <span class="nt">linked</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">codec</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">config</span><span class="p">:</span>
-      <span class="nt">endpoint</span><span class="p">:</span>
-        <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tremor-server</span>
-        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8139</span>
+syslog-udp-in -&gt; consumer -&gt; stdout-output
 </code></pre></div>
-<h3 id="request-flow">Request flow<a class="headerlink" href="#request-flow" title="Permanent link">&para;</a></h3>
-<p>Incoming requests from clients are forwarded to the <code>request_processing</code> pipeline, from where it goes to the upstream server. The resulting response is then returned back to the client which initiated the request (after any needed processing from the <code>response_processing</code> pipeline).</p>
-<div class="highlight"><pre><span></span><code><span class="nt">binding</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
-    <span class="nt">links</span><span class="p">:</span>
-      <span class="c1"># send incoming requests for processing</span>
-      <span class="s">&quot;/onramp/http/{instance}/out&quot;</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">[</span><span class="s">&quot;/pipeline/request_processing/{instance}/in&quot;</span><span class="p p-Indicator">]</span>
-
-      <span class="c1"># process incoming requests and relay it to upstream</span>
-      <span class="s">&quot;/pipeline/request_processing/{instance}/out&quot;</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">[</span><span class="s">&quot;/offramp/upstream/{instance}/in&quot;</span><span class="p p-Indicator">]</span>
-
-      <span class="c1"># send the response from upstream for processing</span>
-      <span class="s">&quot;/offramp/upstream/{instance}/out&quot;</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">[</span><span class="s">&quot;/pipeline/response_processing/{instance}/in&quot;</span><span class="p p-Indicator">]</span>
-
-      <span class="c1"># process upstream response and send it back as a response to incoming</span>
-      <span class="s">&quot;/pipeline/response_processing/{instance}/out&quot;</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">[</span><span class="s">&quot;/onramp/http/{instance}/in&quot;</span><span class="p p-Indicator">]</span>
+<p>Finally the <a href="etc/tremor/config/02_mapping.yaml">mapping</a> instanciates the binding with the given name and instance variable to activate the elements of the binding.</p>
+<h2 id="business-logic">Business Logic<a class="headerlink" href="#business-logic" title="Permanent link">&para;</a></h2>
+<p>The only interesting part to look at is the event rewriting, this uses an example syslog message and adds the <code>event.id</code> as a <code>strucuted_data</code> field.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="nx">{</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;severity&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;notice&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;facility&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;local4&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;hostname&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;example.com&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;appname&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;evntsog&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;msg&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;BOMAn application event log entry...&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;procid&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">null</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;msgid&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;ID47&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;protocol&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;RFC5424&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;protocol_version&quot;</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;structured_data&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">{</span><span class="w"></span>
+<span class="w">              </span><span class="s">&quot;exampleSDID@32473&quot;</span><span class="w"> </span><span class="err">:</span><span class="w"></span>
+<span class="w">              </span><span class="err">[</span><span class="w"></span>
+<span class="w">                </span><span class="nx">{</span><span class="s">&quot;eventSource&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;Tremor&quot;</span><span class="nx">}</span><span class="err">,</span><span class="w"></span>
+<span class="w">                </span><span class="nx">{</span><span class="s">&quot;eventID&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;</span><span class="nx">#{</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">id</span><span class="w"> </span><span class="nx">}</span><span class="s">&quot;</span><span class="nx">}</span><span class="w"></span>
+<span class="w">              </span><span class="err">]</span><span class="w"></span>
+<span class="w">            </span><span class="nx">}</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="s">&quot;timestamp&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">ingest_ns</span><span class="w"></span>
+<span class="nx">}</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="w"></span>
 </code></pre></div>
-<h3 id="processing-logic">Processing logic<a class="headerlink" href="#processing-logic" title="Permanent link">&para;</a></h3>
-<p>Implementation for the <code>request_processing</code> pipeline:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">process</span><span class="w"></span>
-<span class="kd">script</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># erase the host/port from request url so that requests are routed</span>
-<span class="w">  </span><span class="c1"># to the endpoint configured as part of the rest offramp</span>
-<span class="w">  </span><span class="c1"># can set endpoint concretely here too, depending on the need</span>
-<span class="w">  </span><span class="c1"># (eg: different endpoint based on request path/headers)</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="err">$</span><span class="nx">endpoint</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kd">patch</span><span class="w"> </span><span class="err">$</span><span class="nx">request</span><span class="err">.</span><span class="nx">url</span><span class="w"> </span><span class="kd">of</span><span class="w"></span>
-<span class="w">    </span><span class="kd">erase</span><span class="w"> </span><span class="s">&quot;host&quot;</span><span class="err">,</span><span class="w"></span>
-<span class="w">    </span><span class="kd">erase</span><span class="w"> </span><span class="s">&quot;port&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="kd">end</span><span class="err">;</span><span class="w"></span>
-<span class="w">  </span><span class="kc">event</span><span class="err">;</span><span class="w"></span>
-<span class="kd">end</span><span class="err">;</span><span class="w"></span>
-
-<span class="kd">create</span><span class="w"> </span><span class="kd">script</span><span class="w"> </span><span class="nx">process</span><span class="err">;</span><span class="w"></span>
-
-<span class="c1"># main request processing</span>
-<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">process</span><span class="err">;</span><span class="w"></span>
-<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
-
-<span class="c1"># tremor runtime errors from the processing script</span>
-<span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">process</span><span class="err">/</span><span class="nx">err</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">err</span><span class="err">;</span><span class="w"></span>
-</code></pre></div>
-<p>This example demonstrates the minimal processing needed for the proxying logic to work, but you can do any arbitrary processsing on the incoming request as needed (eg: deciding a different upstream based on certain incoming request attributes like headers or request paths).</p>
-<p>The <a href="etc/tremor/config/response_processing.trickle">response_processing</a> pipeline is similarly minimal -- it just adds an entry to the <code>x-powered-by</code> header for showing response modifications (if you don't need it, you can just use a passthrough pipeline, or even rely on the default <code>system::passthrough</code> pipeline which eliminates the need to create this new pipeline).</p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<p>Assuming you have all the code from the <a href="https://github.com/tremor-rs/tremor-www-docs/tree/main/docs/workshop/examples/32_proxies_lt_http">git repository</a>, run the following to start our application (along with the tremor http server example that is the upstream for our proxy):</p>
-<div class="highlight"><pre><span></span><code>docker-compose up
+<p>from inside the docker container, custom syslog messages can be send with the <code>logger</code> command:</p>
+<div class="highlight"><pre><span></span><code>$ logger -d -n <span class="m">127</span>.0.0.1 -P <span class="m">12201</span> <span class="s2">&quot;Weeeeh. It works :D&quot;</span>
 </code></pre></div>
-<p>Now let's try to access an endpoint that we know is available in the upstream server:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># via the proxy. note the additional entry we have in the x-powered-by header</span>
-$ curl -i http://localhost:9139/snot
-HTTP/1.1 <span class="m">200</span> OK
-content-length: <span class="m">8</span>
-x-powered-by: Tremor, Tremor <span class="o">(</span>As Proxy<span class="o">)</span>
-content-type: application/json
-date: Thu, <span class="m">15</span> Oct <span class="m">2020</span> <span class="m">05</span>:00:06 GMT
-
-<span class="s2">&quot;badger&quot;</span>
-
-
-<span class="c1"># just the upstream</span>
-$ curl -i http://localhost:8139/snot
-HTTP/1.1 <span class="m">200</span> OK
-content-length: <span class="m">8</span>
-date: Thu, <span class="m">15</span> Oct <span class="m">2020</span> <span class="m">05</span>:00:44 GMT
-content-type: application/json
-x-powered-by: Tremor
-
-<span class="s2">&quot;badger&quot;</span>
-</code></pre></div>
-<p>All the <a href="../30_servers_lt_http/index.html#testing">testing examples</a> for the example HTTP server should work from here as well, with the port <code>8139</code> there swapped to our proxy application port <code>9139</code>.</p>
                 
               
               
@@ -2271,41 +2135,6 @@ x-powered-by: Tremor
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../31_servers_lt_ws/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Websocket Server" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Websocket Server
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../33_proxies_lt_ws/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Websocket Proxy" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Websocket Proxy
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
