@@ -2544,6 +2544,10 @@ consumer, connecting to a set of topics and ingesting Kafka record data.</p>
 <td>not supported</td>
 </tr>
 <tr>
+<td>gsub</td>
+<td>always</td>
+</tr>
+<tr>
 <td>kafka</td>
 <td>always, only on <code>ack</code> event if <code>enable.auto.commit</code> is set to false</td>
 </tr>
@@ -2814,7 +2818,7 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
 </code></pre></div>
 <h3 id="gsub">gsub<a class="headerlink" href="#gsub" title="Permanent link">&para;</a></h3>
 <p>Google Cloud Pubsub - Subscriber</p>
-<p>This onramp can issue basic operation of receiving a message from a subscription.</p>
+<p>This onramp can issue basic operation of receiving messages from a subscription.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The onramp is experimental.</p>
@@ -2836,7 +2840,7 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
       <span class="nt">pem</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp.pem</span>
       <span class="nt">subscription</span><span class="p">:</span> <span class="s">&quot;tremor-sub&quot;</span>
 </code></pre></div>
-<p>We get the meta data as response that includes the message id and the acknowledgement id of the message.</p>
+<p>We get the meta data as response that includes the message id and the acknowledgement id of the message. Configure the inbound trickle file to display the metadata received.</p>
 <p><strong>Response</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
