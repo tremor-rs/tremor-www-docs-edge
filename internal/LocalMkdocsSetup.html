@@ -1780,12 +1780,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
       
       <label class="md-nav__link" for="__nav_11">
         Development
@@ -1805,6 +1807,110 @@
     <li class="md-nav__item">
       <a href="../development/quick-start.html" class="md-nav__link">
         Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Local MkDocs Testing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="LocalMkdocsSetup.html" class="md-nav__link md-nav__link--active">
+        Local MkDocs Testing
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-mkdocs" class="md-nav__link">
+    Install MkDocs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-extensions" class="md-nav__link">
+    Install Extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-dynamic-documentation-and-configuration" class="md-nav__link">
+    Generate Dynamic Documentation and Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-documentation" class="md-nav__link">
+    Build Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-doc-service" class="md-nav__link">
+    Local Doc Service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RunDocumentationManjaro.html" class="md-nav__link">
+        Setting up MkDocs on Manjaro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="transform.html" class="md-nav__link">
+        Match to Functional
       </a>
     </li>
   
@@ -1842,14 +1948,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_4" type="checkbox" id="__nav_11_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_7" type="checkbox" id="__nav_11_7" >
       
-      <label class="md-nav__link" for="__nav_11_4">
+      <label class="md-nav__link" for="__nav_11_7">
         Benchmarking
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Benchmarking" data-md-level="2">
-        <label class="md-nav__title" for="__nav_11_4">
+        <label class="md-nav__title" for="__nav_11_7">
           <span class="md-nav__icon md-icon"></span>
           Benchmarking
         </label>
@@ -2020,35 +2126,35 @@
       
         <li class="md-nav__item">
   <a href="#install-mkdocs" class="md-nav__link">
-    Install mkdocs
+    Install MkDocs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#install-extensions" class="md-nav__link">
-    Install extensions
+    Install Extensions
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#generate-dynamic-documentation-and-configuration" class="md-nav__link">
-    Generate dynamic documentation and configuration
+    Generate Dynamic Documentation and Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#build-documentation" class="md-nav__link">
-    Build documentation
+    Build Documentation
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#local-doc-service" class="md-nav__link">
-    Local doc service
+    Local Doc Service
   </a>
   
 </li>
@@ -2072,30 +2178,29 @@
                 
                 <h1 id="local-mkdocs-testing">Local MkDocs Testing<a class="headerlink" href="#local-mkdocs-testing" title="Permanent link">&para;</a></h1>
 <p>This is a short canned synopsis for running <a href="https://www.mkdocs.org/">MkDdocs</a> locally while editing the docs.</p>
-<h2 id="install-mkdocs">Install mkdocs<a class="headerlink" href="#install-mkdocs" title="Permanent link">&para;</a></h2>
+<h2 id="install-mkdocs">Install MkDocs<a class="headerlink" href="#install-mkdocs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">#  mkdocs is python-based</span>
 pip3 install mkdocs
 
 <span class="c1"># or on mac systems</span>
 brew install mkdocs
 </code></pre></div>
-<h2 id="install-extensions">Install extensions<a class="headerlink" href="#install-extensions" title="Permanent link">&para;</a></h2>
+<h2 id="install-extensions">Install Extensions<a class="headerlink" href="#install-extensions" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pip3 install -r requirements.txt
 pip3 install -r python_scripts/requirements.txt
 </code></pre></div>
-<p>This installs the <code>mkdocs-material</code> theme which we use, along with other dependencies.</p>
-<p>To enable syntax-highlighting for tremor-script/trickle code snippets, install our mkdocs-specifc tremor lexer as well:</p>
+<p>This installs the <code>mkdocs-material</code> theme which we use along with other dependencies.</p>
+<p>To enable syntax highlighting for tremor-script/trickle code snippets, install our mkdocs-specific, tremor lexer, as well:</p>
 <div class="highlight"><pre><span></span><code>.github/scripts/install-lexer.sh
 </code></pre></div>
-<h2 id="generate-dynamic-documentation-and-configuration">Generate dynamic documentation and configuration<a class="headerlink" href="#generate-dynamic-documentation-and-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="generate-dynamic-documentation-and-configuration">Generate Dynamic Documentation and Configuration<a class="headerlink" href="#generate-dynamic-documentation-and-configuration" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>make
 </code></pre></div>
-<p>This auto-generates the doc files for tremor stdlib and cli, and also produces the default config file for
-mkdocs (<code>mkdocs.yml</code>) file at the end (with the right navigation references to the generated stdlib docs).</p>
-<h2 id="build-documentation">Build documentation<a class="headerlink" href="#build-documentation" title="Permanent link">&para;</a></h2>
+<p>This auto-generates the doc files for tremor stdlib and cli and also produces the default config file for mkdocs, (<code>mkdocs.yml</code>) file, at the end (with the right navigation references to the generated stdlib docs).</p>
+<h2 id="build-documentation">Build Documentation<a class="headerlink" href="#build-documentation" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mkdocs build
 </code></pre></div>
-<h2 id="local-doc-service">Local doc service<a class="headerlink" href="#local-doc-service" title="Permanent link">&para;</a></h2>
+<h2 id="local-doc-service">Local Doc Service<a class="headerlink" href="#local-doc-service" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mkdocs serve
 </code></pre></div>
 <p>The doc site will be available at <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> for reviewing (supports live-reload, as you edit).</p>
@@ -2114,6 +2219,41 @@ mkdocs (<code>mkdocs.yml</code>) file at the end (with the right navigation refe
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../development/quick-start.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quick Start Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="RunDocumentationManjaro.html" class="md-footer__link md-footer__link--next" aria-label="Next: Setting up MkDocs on Manjaro" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Setting up MkDocs on Manjaro
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
