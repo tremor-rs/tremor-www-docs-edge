@@ -1382,6 +1382,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sse" class="md-nav__link">
+    sse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#stdin" class="md-nav__link">
     stdin
   </a>
@@ -2391,6 +2398,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sse" class="md-nav__link">
+    sse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#stdin" class="md-nav__link">
     stdin
   </a>
@@ -3089,6 +3103,25 @@ config:
 </code></pre></div>
 <p>Known limitations:</p>
 <p>It is currently not possible to configure rest onramps via swagger, RAML or OpenAPI configuration files.</p>
+<h3 id="sse">sse<a class="headerlink" href="#sse" title="Permanent link">&para;</a></h3>
+<p>The SSE (Server Sent Events) onramp subscribes to an sse endpoint treating <code>sse-event-data</code> as the event data.</p>
+<p>The event <a href="../tremor-script/stdlib/tremor/origin.html">origin URI</a> set by the onramp is of the form:
+<div class="highlight"><pre><span></span><code>tremor-sse://&lt;tremor-host.local&gt;
+</code></pre></div></p>
+<p>Supported configuration options are:</p>
+<ul>
+<li><code>url</code> - The sse endpoint to subscribe.</li>
+<li><code>headers</code> - A map of headers to set for the requests, where both sides are strings. (optional)</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">onramp</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sse</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sse</span>
+    <span class="nt">config</span><span class="p">:</span>
+      <span class="nt">url</span><span class="p">:</span> <span class="s">&quot;http://localhost:8000/sse&quot;</span>
+      <span class="nt">header</span><span class="p">:</span>
+       <span class="s">&quot;Client&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;Tremor&quot;</span>
+</code></pre></div>
 <h3 id="stdin">stdin<a class="headerlink" href="#stdin" title="Permanent link">&para;</a></h3>
 <p>An onramp that takes input from <code>stdin</code>.</p>
 <p>The default <a href="codecs.html#string">codec</a> is <code>string</code>.</p>
