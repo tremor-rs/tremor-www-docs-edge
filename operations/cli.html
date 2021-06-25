@@ -1269,13 +1269,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dbg-preprocess" class="md-nav__link">
-    dbg preprocess
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#dbg-lex" class="md-nav__link">
     dbg lex
   </a>
@@ -2661,13 +2654,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dbg-preprocess" class="md-nav__link">
-    dbg preprocess
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#dbg-lex" class="md-nav__link">
     dbg lex
   </a>
@@ -3325,10 +3311,6 @@
 <td>prints the AST of the source</td>
 </tr>
 <tr>
-<td><a href="#dbg-preprocess">preprocess</a></td>
-<td>prints the preprocessed source</td>
-</tr>
-<tr>
 <td><a href="#dbg-lex">lex</a></td>
 <td>prints lexemes</td>
 </tr>
@@ -3397,32 +3379,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="dbg-preprocess">dbg <strong>preprocess</strong><a class="headerlink" href="#dbg-preprocess" title="Permanent link">&para;</a></h4>
-<p>prints the preprocessed source</p>
-<p><strong>Usage</strong></p>
-<div class="highlight"><pre><span></span><code>tremor dbg preprocess [&lt;SCRIPT&gt;]
-</code></pre></div>
-<p><strong>Arguments</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Switch</th>
-<th>Kind</th>
-<th>Multiple</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SCRIPT</td>
-<td>None</td>
-<td>switch/flag</td>
-<td>no</td>
-<td>tremor/json/trickle script filename</td>
-</tr>
-</tbody>
-</table>
 <h4 id="dbg-lex">dbg <strong>lex</strong><a class="headerlink" href="#dbg-lex" title="Permanent link">&para;</a></h4>
 <p>prints lexemes</p>
 <p><strong>Usage</strong></p>
@@ -3440,6 +3396,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>preprocess</td>
+<td>None</td>
+<td>switch/flag</td>
+<td>no</td>
+<td>output the pre-processed source.</td>
+</tr>
 <tr>
 <td>SCRIPT</td>
 <td>None</td>
@@ -3466,6 +3429,13 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>preprocess</td>
+<td>None</td>
+<td>switch/flag</td>
+<td>no</td>
+<td>output the pre-processed source.</td>
+</tr>
 <tr>
 <td>SCRIPT</td>
 <td>None</td>
