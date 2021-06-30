@@ -3327,9 +3327,11 @@ scripts to simplify fixing such scripts.</p>
 <h4 id="matching-tuple-patterns">Matching tuple patterns<a class="headerlink" href="#matching-tuple-patterns" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>A <em>tuple pattern</em> matches a <em>target</em> value if the <em>target</em> is an array and <strong>each</strong> test matches the positionally correspondent value in the <em>target</em>. The <em>target</em> needs to be <strong>at least as long</strong> as the <em>pattern</em> but <strong>can be longer</strong> if the <em>pattern</em> ends with <code>...</code>.</p>
-<p>If you are looking for a more set like operation look at the <a href="#matching-array-patterns">array pattern</a>.</p>
 </div>
+<p>A <em>tuple pattern</em> matches a <em>target</em> value if the <em>target</em> is an array and <strong>each</strong> test matches the positionally correspondent value in the <em>target</em>. The <em>target</em> needs to be <strong>at least as long</strong> as the <em>pattern</em> but <strong>can be longer</strong> if the <em>pattern</em> ends with <code>...</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">If</span> <span class="n">you</span> <span class="n">are</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">a</span> <span class="n">more</span> <span class="n">set</span> <span class="n">like</span> <span class="n">operation</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="p">[</span><span class="n">array</span> <span class="n">pattern</span><span class="p">](</span><span class="err">#</span><span class="n">matching</span><span class="o">-</span><span class="n">array</span><span class="o">-</span><span class="n">patterns</span><span class="p">).</span>
+</code></pre></div>
+
 <blockquote>
 <p><img alt="tuple case grammar" src="grammar/diagram/TupleCase.png" /></p>
 </blockquote>
@@ -3353,9 +3355,11 @@ scripts to simplify fixing such scripts.</p>
 <h4 id="matching-array-patterns">Matching array patterns<a class="headerlink" href="#matching-array-patterns" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>An <em>array pattern</em> matches a target value if the <em>target</em> is an array and <strong>each</strong> test in the pattern matches <strong>at least for one</strong> element in the <em>target</em> indiscriminate of their positions.</p>
-<p>If you are looking for a more array like / positional operation look at the <a href="#matching-tuple-patterns">tuple pattern</a>.</p>
 </div>
+<p>An <em>array pattern</em> matches a target value if the <em>target</em> is an array and <strong>each</strong> test in the pattern matches <strong>at least for one</strong> element in the <em>target</em> indiscriminate of their positions.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">If</span> <span class="n">you</span> <span class="n">are</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">a</span> <span class="n">more</span> <span class="n">array</span> <span class="n">like</span> <span class="o">/</span> <span class="n">positional</span> <span class="n">operation</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="p">[</span><span class="n">tuple</span> <span class="n">pattern</span><span class="p">](</span><span class="err">#</span><span class="n">matching</span><span class="o">-</span><span class="n">tuple</span><span class="o">-</span><span class="n">patterns</span><span class="p">).</span>
+</code></pre></div>
+
 <blockquote>
 <p><img alt="array case grammar" src="grammar/diagram/ArrayCase.png" /></p>
 </blockquote>
@@ -3384,8 +3388,8 @@ scripts to simplify fixing such scripts.</p>
 <h4 id="matching-record-patterns">Matching record patterns<a class="headerlink" href="#matching-record-patterns" title="Permanent link">&para;</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>A record pattern matches a target if the target is a record that contains <strong>at least all declared keys</strong> and the tests for <strong>each of the declared key</strong> match.</p>
 </div>
+<p>A record pattern matches a target if the target is a record that contains <strong>at least all declared keys</strong> and the tests for <strong>each of the declared key</strong> match.</p>
 <blockquote>
 <p><img alt="record case grammar" src="grammar/diagram/RecordCase.png" /></p>
 </blockquote>
@@ -3518,7 +3522,12 @@ Things are simple when using only a single expression as the match case effector
 <p><img alt="patch operation grammar" src="grammar/diagram/PatchOperation.png" /></p>
 </blockquote>
 <p>Patch expressions define a set of record level field operations to be applied to a target record in order to transform a targetted record. Patch allows fields to be: inserted where there was no field before; removed where there was a field before; updated where there was a field before; or inserted or updated regardless of whether or not there was a field before. Patch also allows field level merge operations on records or for the targetted document itself to be merged. Merge operations in patch are syntax sugar in that they are both based on the merge operation.</p>
-<p>Patch follows the semantics of <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> with the explicit exclusion of the <code>copy</code> and <code>move</code> operations and with the addition of an <code>upsert</code> operation the variant supported by <code>tremor-script</code></p>
+<p>Patch follows the semantics of <a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a> with the addition of an <code>upsert</code> and <code>default</code> operation.</p>
+<ul>
+<li><code>upsert "key" =&gt; "value"</code> - functions as a update or insert (replacing an existing value or creating a new one).</li>
+<li><code>default "key" =&gt; "value</code> - functions as a default for a key, inserting <code>"value"</code> only if <code>"key"</code> isn't present.</li>
+<li><code>default =&gt; {"nested": "template"}</code> - functions as a default template, recursively filling the given keys with values if not present.</li>
+</ul>
 <table>
 <thead>
 <tr>
