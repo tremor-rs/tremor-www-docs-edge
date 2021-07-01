@@ -1306,6 +1306,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zstd" class="md-nav__link">
+    zstd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gelf-chunking" class="md-nav__link">
     gelf-chunking
   </a>
@@ -2343,6 +2350,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zstd" class="md-nav__link">
+    zstd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gelf-chunking" class="md-nav__link">
     gelf-chunking
   </a>
@@ -2425,6 +2439,7 @@
 <li>xz</li>
 <li>snappy</li>
 <li>lz4</li>
+<li>zstd</li>
 </ul>
 <h3 id="gzip">gzip<a class="headerlink" href="#gzip" title="Permanent link">&para;</a></h3>
 <p>Decompress GZ compressed payload.</p>
@@ -2436,6 +2451,8 @@
 <p>Decompress framed snappy compressed payload (does not support raw snappy).</p>
 <h3 id="lz4">lz4<a class="headerlink" href="#lz4" title="Permanent link">&para;</a></h3>
 <p>Decompress Lz4 compressed payload.</p>
+<h3 id="zstd">zstd<a class="headerlink" href="#zstd" title="Permanent link">&para;</a></h3>
+<p>Decompress Zstd compressed payload.</p>
 <h3 id="gelf-chunking">gelf-chunking<a class="headerlink" href="#gelf-chunking" title="Permanent link">&para;</a></h3>
 <p>Reassembles messages that were split apart using the <a href="https://docs.graylog.org/en/3.0/pages/gelf.html#chunking">GELF chunking protocol</a>.</p>
 <p>If the GELF messages were sent compressed, you can decompress them by chaining the <a href="#decompress">decompress</a> preprocessor. An example is documented <a href="onramps.html#udp-onramp-example-for-gelf">here</a> -- you may need to apply <code>decompress</code> before and/or after the reassembly here, depending on how your GELF client(s) behave.</p>
