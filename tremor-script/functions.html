@@ -2233,7 +2233,7 @@ advanced data manipulation or access to additional information.</p>
 <p>Tremor also supports user defined functions. There are a few
 noteworthy restrictions:</p>
 <ol>
-<li>Functions are pure / side effect free - you can not mutate <code>event</code>, <code>state</code>,
+<li>Functions are pure / side effect free - you can not access <code>event</code>, <code>state</code>,
    or <code>$</code> inside of a function.</li>
 <li>Functions have to return a value, as tremor-script is expression oriented.</li>
 <li>Functions can only be defined once, even if they take different forms or

@@ -447,6 +447,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowing-semantics" class="md-nav__link">
+    Windowing Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="Windowing Semantics">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#grammar_2" class="md-nav__link">
     Grammar
@@ -2557,6 +2570,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowing-semantics" class="md-nav__link">
+    Windowing Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="Windowing Semantics">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#grammar_2" class="md-nav__link">
     Grammar
@@ -2722,10 +2748,10 @@
 <h2 id="language">Language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h2>
 <p>This section details the major components of the <code>tremor-query</code> language.</p>
 <h3 id="tremor-script">Tremor-Script<a class="headerlink" href="#tremor-script" title="Permanent link">&para;</a></h3>
-<p>Comments, Literals, Paths and Expression forms supported in <strong>trickle</strong> are the
-same as in <code>tremor-script</code>.</p>
+<p><a href="../tremor-script/index.html#comments">Comments</a>, <a href="../tremor-script/index.html#literals">Literals</a>, <a href="../tremor-script/index.html#paths">Paths</a> and Expression forms supported in <strong>trickle</strong> are the
+same as in <a href="../tremor-script/index.html"><code>tremor-script</code></a>.</p>
 <h3 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h3>
-<p>Queries are one or many statements separated by <code>;</code>.</p>
+<p>A Query consists of one or many statements separated by <code>;</code>.</p>
 <p>Queries are compiled into a DAG of operator nodes and validated at compile time. At runtime, the resulting executable tremor pipeline is evaluated/interpreted.</p>
 <h5 id="grammar">Grammar<a class="headerlink" href="#grammar" title="Permanent link">&para;</a></h5>
 <blockquote>
@@ -2791,12 +2817,14 @@ independent from event flow with a granularity of <code>100ms</code>. It is thus
 <p>Configuration Parameters:</p>
 <ul>
 <li><code>interval</code>: Time interval in nanoseconds after which the window closes.</li>
-<li><code>emit_empty_windows</code> - By default, time based windows will only emit, if events arrived. By configuring <code>emit_empty_windows</code> as <code>true</code> this window will emit every <code>interval</code>, regardless if events arrived or not.</li>
+<li><code>emit_empty_windows</code> - By default, time based windows will only emit, if events arrived. By configuring <code>emit_empty_windows</code> as <code>true</code> this window will emit every <code>interval</code> for groups it has already seen, regardless if events arrived within <code>interval</code> or not.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you use a window with <code>emit_empty_windows</code> in a <code>group by</code> query and the cardinality is likely huge, consider using <code>max_groups</code> and <code>eviction_period</code> to avoid runaway memory growth such a window will one event per interval and group for which we've seen events before.</p>
 </div>
+<h4 id="windowing-semantics">Windowing Semantics<a class="headerlink" href="#windowing-semantics" title="Permanent link">&para;</a></h4>
+<p>A select query using one or more windows is generating <em>new</em> synthetic events, aggregated from the events feeded into it. Even if a window only consists of a single event, it needs to be considered a new event. The shape of the new event is determined by the <a href="#select-queries"><code>select</code></a> <em>Target Expression</em>. Those new events will have an empty metadata and the <a href="tremor-script/stdlib/tremor/origin.md">origin uri</a> is pointing to the windowed <a href="#select-queries"><code>select</code></a> query.</p>
 <h5 id="grammar_2">Grammar<a class="headerlink" href="#grammar_2" title="Permanent link">&para;</a></h5>
 <blockquote>
 <p><img alt="window definition grammar" src="grammar/diagram/DefineWindowDefn.png" /></p>
@@ -2885,13 +2913,28 @@ independent from event flow with a granularity of <code>100ms</code>. It is thus
 <blockquote>
 <p><img alt="select grammar" src="grammar/diagram/SelectStmt.png" /></p>
 </blockquote>
-<p>The select query is a builtin operation that is the workhorse of the <code>tremor-query</code> language.</p>
+<p>The select query is a builtin operation that is the workhorse of the <code>tremor-query</code> language. A select query describes from where to where an event should be routed (and under which conditions) and how it is transformed along the way.</p>
 <p>An example select operation configured to pass through data from a pipeline's default <code>in</code> stream to a pipeline's default <code>out</code> stream:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
 </code></pre></div>
+<p>The</p>
 <p>Select operations can filter ingested data with the specification of a <a href="#WhereClause"><code>where</code> clause</a>. The clause forms a predicate check on the inbound events before any further processing takes place.
 That means the <code>event</code> available to the <a href="#WhereClause"><code>where</code> clause</a> is the unprocessed inbound event from the input stream (<code>in</code> in this case):</p>
 <div class="highlight"><pre><span></span><code><span class="kd">select</span><span class="w"> </span><span class="kc">event</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">where</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">is_interesting</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
+<p>The <em>Target Expression</em> of a select query is used to describe transformations of the event. To pass through the event without changes, just use <code>select event</code>, otherwise you can construct arbitrary <a href="../tremor-script/index.html#literals">literals</a> (numbers, records, arrays, ...), call functions, aggregate functions, reference the event metadata via <code>$</code> or other <a href="../tremor-script/index.html#special-paths">Special paths</a>. Nearly everything is possible:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">use</span><span class="w"> </span><span class="nx">std</span><span class="err">::</span><span class="nx">string</span><span class="err">;</span><span class="w"></span>
+<span class="kd">use</span><span class="w"> </span><span class="nx">tremor</span><span class="err">::</span><span class="nx">system</span><span class="err">;</span><span class="w"></span>
+
+<span class="kd">select</span><span class="w"></span>
+<span class="w">  </span><span class="nx">{</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;accumulated&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">[</span><span class="kc">event</span><span class="err">.</span><span class="nx">first</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;middle&quot;</span><span class="err">,</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">last</span><span class="err">],</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;metadata&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">$</span><span class="nx">meta</span><span class="err">.</span><span class="nx">nested</span><span class="err">[</span><span class="mi">0</span><span class="err">].</span><span class="nx">deep</span><span class="err">,</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;shouted&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;</span><span class="nx">#{</span><span class="w"> </span><span class="nx">string</span><span class="err">::</span><span class="nx">uppercase</span><span class="err">(</span><span class="kc">event</span><span class="err">.</span><span class="nx">message</span><span class="err">)</span><span class="w"> </span><span class="nx">}</span><span class="s">!&quot;</span><span class="err">,</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;now&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">system</span><span class="err">::</span><span class="nx">nanotime</span><span class="err">(),</span><span class="w"></span>
+<span class="w">      </span><span class="s">&quot;awesome&quot;</span><span class="err">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">  </span><span class="nx">}</span><span class="w"></span>
+<span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
 </code></pre></div>
 <p>Select operations can filter data being forwarded to other operators with the specification of a <a href="#HavingClause"><code>having</code> clause</a>. The clause forms a predicate check on outbound synthetic events after any other processing has taken place.
 That means the <code>event</code> available to the <a href="#HavingClause"><code>having</code> clause</a> is the result of evaluating the <code>select</code> target clause (the expression between <code>select</code> and <code>from</code>).</p>
@@ -2906,6 +2949,22 @@ That means the <code>event</code> available to the <a href="#HavingClause"><code
 <span class="kd">select</span><span class="w"> </span><span class="nx">{</span><span class="w"> </span><span class="s">&quot;count&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">stats</span><span class="err">::</span><span class="nx">count</span><span class="err">()</span><span class="w"> </span><span class="nx">}</span><span class="w"> </span><span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="err">[</span><span class="nx">fifteen_secs</span><span class="err">]</span><span class="w"> </span><span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">having</span><span class="w"> </span><span class="kc">event</span><span class="err">.</span><span class="nx">count</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="err">;</span><span class="w"></span>
 </code></pre></div>
 <p>In the above operation, we emit a synthetic count every fifteen seconds if at least one event has been witnessed during a 15 second window of time.</p>
+<p>Windows emit new events which are an aggregation of the events feeded into them. Those new events will have an empty event metadata (accessible via <code>$</code>).
+The same is true for the <a href="../tremor-script/stdlib/tremor/origin.html">origin uri</a>, which will point to the windowed query, not the origin of any event feeded into the window.</p>
+<p>To drag event metadata across a windowed query, it needs to be selected into the event payload:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">take_two</span><span class="w"></span>
+<span class="kd">with</span><span class="w"></span>
+<span class="w">    </span><span class="nx">size</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">eviction_period</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nx">core</span><span class="err">::</span><span class="nx">datetime</span><span class="err">::</span><span class="nx">with_seconds</span><span class="err">(</span><span class="mi">5</span><span class="err">)</span><span class="w"></span>
+<span class="kd">end</span><span class="err">;</span><span class="w"></span>
+<span class="kd">select</span><span class="w"></span>
+<span class="w">  </span><span class="nx">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;first&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">win</span><span class="err">::</span><span class="nx">first</span><span class="err">($.</span><span class="nx">kafka</span><span class="err">.</span><span class="nx">key</span><span class="err">),</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;all_metas&quot;</span><span class="err">:</span><span class="w"> </span><span class="nx">aggr</span><span class="err">::</span><span class="nx">win</span><span class="err">::</span><span class="nx">collect_flattened</span><span class="err">($),</span><span class="w"></span>
+<span class="w">  </span><span class="nx">}</span><span class="w"></span>
+<span class="kd">from</span><span class="w"> </span><span class="nx">in</span><span class="err">[</span><span class="nx">take_two</span><span class="err">]</span><span class="w"></span>
+<span class="kd">into</span><span class="w"> </span><span class="nx">out</span><span class="err">;</span><span class="w"></span>
+</code></pre></div>
 <p>Select operations can be grouped through defining a <a href="#GroupByClause"><code>group by</code> clause</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="kd">tumbling</span><span class="w"> </span><span class="kd">window</span><span class="w"> </span><span class="nx">fifteen_secs</span><span class="w"></span>
 <span class="kd">with</span><span class="w"></span>

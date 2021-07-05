@@ -2307,6 +2307,7 @@
 <h2 id="script">script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h2>
 <p>An embedded tremor script is created with a special syntax that deviates from the operator creation. For a full reference see the section on <a href="index.html#embedded-script-definitions">tremor-query embedded-scripts</a>.</p>
 <p>The tremor script runtime allows to modify events or their metadata. To learn more about Tremor Script please see the <a href="../tremor-script/index.html">related section</a>.</p>
+<p>The <code>script</code> operator allows to modify the events metadata (via <code>$</code>), and the script local <code>state</code> which persists across single events.</p>
 <p><strong>Outputs</strong>:</p>
 <ul>
 <li><code>out</code> (default output used with <code>emit</code>)</li>
@@ -2333,6 +2334,7 @@
 <h2 id="grouperbucket">grouper::bucket<a class="headerlink" href="#grouperbucket" title="Permanent link">&para;</a></h2>
 <p>Bucket will perform a sliding window rate limiting based on event metadata. Limits are applied for every <code>$class</code>. In a <code>$class</code> each <code>$dimensions</code> is allowed to pass <code>$rate</code> messages per second.</p>
 <p>This operator does not support configuration.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Metadata Variables</strong>:</p>
 <ul>
 <li><code>$class</code> - The class of an event. (String)</li>
@@ -2385,6 +2387,7 @@
 <p>This operator is deprecated please use <code>qos::backpressure</code> instead.</p>
 <h2 id="qosbackpressure">qos::backpressure<a class="headerlink" href="#qosbackpressure" title="Permanent link">&para;</a></h2>
 <p>The backpressure operator is used to introduce delays based on downstream systems load. Longer backpressure steps are introduced every time the latency of a downstream system reached <code>timeout</code>, or an error occurs. On a successful transmission within the timeout limit, the delay is reset.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Configuration options</strong>:</p>
 <ul>
 <li><code>timeout</code> - Maximum allowed 'write' time in milliseconds.</li>
@@ -2407,6 +2410,7 @@ time we drop a statistical subset with an increasing percentage of events droppe
 see errors / timeouts.</p>
 <p>In general <code>step_up</code> should always be significantly smaller then <code>step_down</code> to ensure we gradually
 reapproach the ideal state.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Configuration options</strong>:</p>
 <ul>
 <li><code>timeout</code> - Maximum allowed 'write' time in milliseconds.</li>
@@ -2429,6 +2433,7 @@ reapproach the ideal state.</p>
 <p>Evenly distributes events over it's outputs. If a CB trigger event is received from an output this
 output is skipped until the circuit breaker is restored. If all outputs are triggered the operator
 itself triggers a CB event.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Outputs</strong>:</p>
 <ul>
 <li><code>*</code> (any named output is possible)</li>
@@ -2452,6 +2457,7 @@ from disk once they're acknowledged. In case of delivery failure the WAL operato
 failed events. On the same way the WAL operator will acknowledge events that it persists to disk.</p>
 <p>The WAL operator should be used with caution, since every event that passes through it will be
 written to the hard drive it has a significant performance impact.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Configuration options</strong>:</p>
 <ul>
 <li><code>read_count</code> - Maximum number of events that are read form the WAL at one time.</li>
@@ -2475,6 +2481,7 @@ written to the hard drive it has a significant performance impact.</p>
 </code></pre></div>
 <h2 id="genericbatch">generic::batch<a class="headerlink" href="#genericbatch" title="Permanent link">&para;</a></h2>
 <p>The batch operator is used to batch multiple events and send them in a bulk fashion. It also allows to set a timeout of how long the operator should wait for a batch to be filled.</p>
+<p>This operator batches both the event payload and event metadata into a single bulk event. Downstream pipeline nodes or offramps will receive 1 such bulk event but will treat its context as multiple events and might act different e.g. when it comes to building a request payload in the offramp context or other use cases. Empty bulk events are usually considered as <code>no</code> event.</p>
 <p>Supported configuration options are:</p>
 <ul>
 <li><code>count</code> - Elements per batch</li>
@@ -2492,6 +2499,7 @@ written to the hard drive it has a significant performance impact.</p>
 <h2 id="genericcounter">generic::counter<a class="headerlink" href="#genericcounter" title="Permanent link">&para;</a></h2>
 <p>Keeps track of the number of events as they come and emits the current count out alongside the event. The output is a record of the form <code>{"count": n, "event": event}</code>, where <code>n</code> is the current count and <code>event</code> is the original event.</p>
 <p>The counter starts when the first event comes through and begins from 1.</p>
+<p>This operator preserves event metadata.</p>
 <p><strong>Outputs</strong>:</p>
 <ul>
 <li><code>out</code></li>
@@ -2506,6 +2514,7 @@ written to the hard drive it has a significant performance impact.</p>
 </div>
 <p>This operator generates a history entry in the event metadata underneath the field provided in the <code>name</code> config value. Data is pushed to the array as a Striong in the form: <code>"event: &lt;op&gt;(&lt;event_id&gt;)"</code>.</p>
 <p>This can be used as a tracepoint of events in a complex pipeline setup.</p>
+<p>This operator manipulates a section of the event metadata.</p>
 <p><strong>Configuration options</strong>:</p>
 <ul>
 <li><code>op</code> - The operation name of this operator</li>
