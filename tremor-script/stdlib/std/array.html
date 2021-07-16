@@ -797,6 +797,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#concatenateleft-right" class="md-nav__link">
+    concatenate(left, right)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2274,6 +2281,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#concatenateleft-right" class="md-nav__link">
+    concatenate(left, right)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2343,6 +2357,12 @@ separator.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">array</span><span class="err">:</span><span class="nx">join</span><span class="err">([</span><span class="s">&quot;this&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;is&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="err">,</span><span class="w"> </span><span class="s">&quot;cake&quot;</span><span class="err">],</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="err">)</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="s">&quot;this is a cake&quot;</span><span class="w"></span>
 </code></pre></div>
 <p>Returns a <code>string</code>.</p>
+<h3 id="concatenateleft-right">concatenate(left, right)<a class="headerlink" href="#concatenateleft-right" title="Permanent link">&para;</a></h3>
+<p>Concatenates two arrays returning a new array. The new array is not a set,
+i.e. it can contain duplicates depending on the input arrays.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">array</span><span class="err">::</span><span class="nx">concatenate</span><span class="err">([</span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"> </span><span class="mi">3</span><span class="err">],</span><span class="w"> </span><span class="err">[</span><span class="mi">3</span><span class="err">,</span><span class="w"> </span><span class="mi">4</span><span class="err">])</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">[</span><span class="mi">1</span><span class="err">,</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w"> </span><span class="mi">3</span><span class="err">,</span><span class="w"> </span><span class="mi">3</span><span class="err">,</span><span class="w"> </span><span class="mi">4</span><span class="err">]</span><span class="w"></span>
+</code></pre></div>
+<p>Returns an <code>array</code></p>
                 
               
               
