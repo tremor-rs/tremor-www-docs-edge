@@ -2806,14 +2806,11 @@ same as in <a href="../tremor-script/"><code>tremor-script</code></a>.</p>
 <p>Tremor supports tumbling windows by number of events or by time.</p>
 <p>General configuration Parameters:</p>
 <ul>
-<li><code>eviction_period</code>: duration in nanoseconds without events arriving, after which to evict / remove the current window data for a single group.</li>
 <li><code>max_groups</code>: maximum number of groups to maintain simultaneously in memory. Groups added beyond that number will be ignored. Per default, tremor does not impose any limit on the number of groups kept simultaneously.</li>
 </ul>
 <p>Each select statement maintains the groups for the current windows in an in memory data-structure. This contains the group values as well as the aggregate states.
-If your grouping values possibly have a very high cardinality it is possible to end up with runaway memory growth, as per default the group data structures won't be evicted,
-unless <code>eviction_period</code> is set. Old groups will be discarded after <code>2 x eviction_period</code> if no event for those groups arrived.
-To configure an upper bound on the number of groups that should be maintained simultaneously for a window, set <code>max_groups</code>.
-This will help avoid unbounded memory growth, especially when using <code>emit_empty_windows</code> on time based windows.</p>
+If your grouping values possibly have a very high cardinality it is possible to end up with runaway memory growth, as per default the group data structures won't be evicted as long asd they hold data.
+To configure an upper bound on the number of groups that should be maintained simultaneously for a window, set <code>max_groups</code>.</p>
 <h5 id="windows-based-on-number-of-events">Windows based on number of events<a class="headerlink" href="#windows-based-on-number-of-events" title="Permanent link">&para;</a></h5>
 <p>Size based tumbling windows close when a certain number of aggregated events has been reached.</p>
 <p>Configuration Parameters:</p>
@@ -2833,12 +2830,7 @@ independent from event flow with a granularity of <code>100ms</code>. It is thus
 <p>Configuration Parameters:</p>
 <ul>
 <li><code>interval</code>: Time interval in nanoseconds after which the window closes.</li>
-<li><code>emit_empty_windows</code> - By default, time based windows will only emit, if events arrived. By configuring <code>emit_empty_windows</code> as <code>true</code> this window will emit every <code>interval</code> for groups it has already seen, regardless if events arrived within <code>interval</code> or not.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you use a window with <code>emit_empty_windows</code> in a <code>group by</code> query and the cardinality is likely huge, consider using <code>max_groups</code> and <code>eviction_period</code> to avoid runaway memory growth such a window will one event per interval and group for which we've seen events before.</p>
-</div>
 <h4 id="windowing-semantics">Windowing Semantics<a class="headerlink" href="#windowing-semantics" title="Permanent link">&para;</a></h4>
 <p>A select query using one or more windows is generating <em>new</em> synthetic events, aggregated from the events feeded into it. Even if a window only consists of a single event, it needs to be considered a new event. The shape of the new event is determined by the <a href="#select-queries"><code>select</code></a> <em>Target Expression</em>. Those new events will have an empty metadata and the <a href="tremor-script/stdlib/tremor/origin.md">origin uri</a> is pointing to the windowed <a href="#select-queries"><code>select</code></a> query.</p>
 <h5 id="grammar_2">Grammar<a class="headerlink" href="#grammar_2" title="Permanent link">&para;</a></h5>
