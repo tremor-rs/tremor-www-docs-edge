@@ -1324,6 +1324,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     file
   </a>
@@ -2412,6 +2419,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     file
   </a>
@@ -2627,6 +2641,10 @@ consumer, connecting to a set of topics and ingesting Kafka record data.</p>
 </tr>
 <tr>
 <td>discord</td>
+<td>not supported</td>
+</tr>
+<tr>
+<td>env</td>
 <td>not supported</td>
 </tr>
 <tr>
@@ -2884,6 +2902,17 @@ from the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">year 2038 pro
     <span class="p">],</span>
   <span class="p">}</span>
 <span class="p">}}</span>
+</code></pre></div>
+<h3 id="env">env<a class="headerlink" href="#env" title="Permanent link">&para;</a></h3>
+<p>The <code>env</code> onramp reads the environment variables from the shell starting tremor and sends them as a message on startup. This message is send only once, right when the source is connected.</p>
+<p>There are no configuration variables and no codecs since data is provided in a structured format.</p>
+<p>The output has the form of a record with the key <code>env</code> that holds a record where the key is the name of the environment variable and the value is it's value as a string.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="s2">&quot;env&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;SHELL&quot;</span><span class="o">:</span> <span class="s2">&quot;/usr/bin/zsh&quot;</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="file">file<a class="headerlink" href="#file" title="Permanent link">&para;</a></h3>
 <p>The file onramp reads the content of a file, line by line, and sends each line as an event. It has the ability to shut down the system upon completion. Files can be <code>xz</code> compressed.</p>
