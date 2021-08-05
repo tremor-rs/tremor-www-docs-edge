@@ -2403,11 +2403,17 @@
 <p>This operator is deprecated please use <code>qos::backpressure</code> instead.</p>
 <h2 id="qosbackpressure">qos::backpressure<a class="headerlink" href="#qosbackpressure" title="Permanent link">&para;</a></h2>
 <p>The backpressure operator is used to introduce delays based on downstream systems load. Longer backpressure steps are introduced every time the latency of a downstream system reached <code>timeout</code>, or an error occurs. On a successful transmission within the timeout limit, the delay is reset.</p>
+<p>The operator supports two modes:</p>
+<ul>
+<li><code>discard</code> - the standard, when backpressure is triggered it will discard new messages by sending them to the <code>overflow</code> output port. This is designed to fulfill the need of low transport latency at the cost of loss.</li>
+<li><code>pause</code> - it will trigger a circuit breaker and ask the sources that send it data to stop sending additional events. No Event is discarded by the backpressure operator. This is designed to deal with situations where losing events is not an option - but the garuantee of losslessness depends on the source and how it can handle circuit breaker events.</li>
+</ul>
 <p>This operator preserves event metadata.</p>
 <p><strong>Configuration options</strong>:</p>
 <ul>
 <li><code>timeout</code> - Maximum allowed 'write' time in milliseconds.</li>
 <li><code>steps</code> - Array of values to delay when a we detect backpressure. (default: <code>[50, 100, 250, 500, 1000, 5000, 10000]</code>)</li>
+<li><code>method</code> - Either <code>discard</code> or <code>pause</code> to define how backpressure is handled (default: <code>discard</code>)</li>
 </ul>
 <p><strong>Outputs</strong>:</p>
 <ul>
@@ -2417,7 +2423,8 @@
 <p><strong>Example</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">define</span><span class="w"> </span><span class="nx">qos</span><span class="err">::</span><span class="nx">backpressure</span><span class="w"> </span><span class="kd">operator</span><span class="w"> </span><span class="nx">bp</span><span class="w"></span>
 <span class="kd">with</span><span class="w"></span>
-<span class="w">  </span><span class="nx">timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+<span class="w">  </span><span class="nx">timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">100</span><span class="err">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">method</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="w"></span>
 <span class="kd">end</span><span class="err">;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="qospercentile">qos::percentile<a class="headerlink" href="#qospercentile" title="Permanent link">&para;</a></h2>
